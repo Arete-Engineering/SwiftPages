@@ -5,7 +5,6 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useCollectionData } from "react-firebase-hooks/firestore";
 
 //Firebase config
 firebase.initializeApp({
@@ -19,12 +18,11 @@ firebase.initializeApp({
 });
 
 const auth = firebase.auth();
-const firestore = firebase.firestore();
 
 let project_name = 'Opulent';
 
 export default function Header() {
-    const user = auth.currentUser;
+    const [user] = useAuthState(auth)
     const profile_picture = user ? user.photoURL : profile_pic;
 
     return (
