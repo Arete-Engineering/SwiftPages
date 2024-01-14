@@ -21,7 +21,7 @@ import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
 
 function Placeholder() {
-  return <div className="editor-placeholder">Enter some rich text...</div>;
+  return <div className="editor-placeholder">Begin...</div>;
 }
 
 const editorConfig = {
@@ -58,7 +58,7 @@ export default function Editor() {
             placeholder={<Placeholder />}
           />
           <HistoryPlugin />
-          <TreeViewPlugin />
+          {/* <TreeViewPlugin /> */}
           <AutoFocusPlugin />
           <CodeHighlightPlugin />
           <ListPlugin />

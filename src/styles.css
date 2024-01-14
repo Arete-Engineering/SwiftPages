@@ -1,3 +1,30 @@
+/* HEADER */
+.App_header {
+  background-color: #ffffff;
+  padding: 20px;
+  color: black;
+}
+
+.App_header ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-around; /* Equal spacing between items */
+}
+
+.App_header a:hover {
+  text-decoration: underline;
+}
+
+/* PROFILE PICTURE */
+.profile_picture {
+  border-radius: 50%;
+  max-width: 10%;
+  max-height: 10%;
+}
+
 body {
   margin: 0;
   background: #eee;
@@ -82,7 +109,7 @@ h1 {
   top: 15px;
   left: 10px;
   font-size: 15px;
-  user-select: none;
+  /* user-select: none; */
   display: inline-block;
   pointer-events: none;
 }
@@ -442,7 +469,7 @@ pre::-webkit-scrollbar-thumb {
   display: flex;
   width: 20px;
   height: 20px;
-  user-select: none;
+  /* user-select: none; */
   margin-right: 8px;
   line-height: 16px;
   background-size: contain;
@@ -453,7 +480,7 @@ pre::-webkit-scrollbar-thumb {
   width: 16px;
   height: 16px;
   display: flex;
-  user-select: none;
+  /* user-select: none; */
 }
 
 .toolbar i.chevron-down.inside {
@@ -579,7 +606,7 @@ i.chevron-down {
   display: flex;
   width: 20px;
   height: 20px;
-  user-select: none;
+  /* user-select: none; */
   margin-right: 12px;
   line-height: 16px;
   background-size: contain;
