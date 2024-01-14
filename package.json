@@ -6,9 +6,11 @@
   "main": "src/index.js",
   "dependencies": {
     "@lexical/react": "0.4.0",
+    "firebase": "^10.7.1",
     "lexical": "0.4.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-firebase-hooks": "^5.1.1",
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
