@@ -60,16 +60,26 @@ export default function SignIn() {
               Save your password.
             </small>
           </div>
-          <div className="mb-4 text-center">
+          <div className="mb-3 text-center">
             <button
-              style={{ backgroundColor: "#ad1efd", borderColor: "#ad1efd" }}
+              style={{
+                width: "100%",
+                backgroundColor: "#ad1efd",
+                borderColor: "#ad1efd",
+              }}
               type="submit"
               className="btn btn-primary me-4"
             >
               Continue 👋
             </button>
+          </div>
+          <div className="mb-4 text-center">
             <button
-              style={{ backgroundColor: "#ad1efd", borderColor: "#ad1efd" }}
+              style={{
+                width: "100%",
+                backgroundColor: "#ad1efd",
+                borderColor: "#ad1efd",
+              }}
               type="submit"
               className="btn btn-primary"
             >
