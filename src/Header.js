@@ -32,11 +32,15 @@ export default function Header() {
                 <li><a href="#">Earth</a></li>
                 <li><a href="#">Create</a></li>
                 <li><a href="#">Memory</a></li>
-                <li><SignIn /></li>
+                <li><SignOut /></li>
                 <li><img src={profile_picture} alt="ProfilePicture" className="profile_picture"/></li>
             </ul>
         </header>
     )
+}
+
+function SignOut() {
+    return <button onClick={() => auth.signOut()}>Sign-Out</button>
 }
 
 function SignIn() {
