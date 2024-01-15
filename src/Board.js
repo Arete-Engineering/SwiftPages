@@ -18,7 +18,7 @@ export default function Board() {
 
   return (
     <div>
-      <button onClick={handleToggleEditor}>Toggle Editor</button>
+      <button className='btn btn-success' onClick={handleToggleEditor}>Start Writing</button>
       {showEditor && (
         <div>
           <Editor />

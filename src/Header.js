@@ -32,7 +32,8 @@ export default function Header() {
           <a
             href="#"
             style={{
-              fontWeight: "bold",
+              fontWeight: 'bold',
+              color: '#a4a4a4'
             }}
           >
             {project_name}
