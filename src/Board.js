@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Editor from "./Editor";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Board() {
   const [showEditor, setShowEditor] = useState(false);
@@ -17,14 +18,27 @@ export default function Board() {
   };
 
   return (
-    <div>
-      <button className='btn btn-success' onClick={handleToggleEditor}>Start Writing</button>
-      {showEditor && (
+    <div className="mt-4">
+      {showEditor ? (
         <div>
           <Editor />
-          <button onClick={handleSaveClick}>Save</button>
-          <button onClick={handleCloseClick}>X</button>
+          <button className="btn btn-outline-success mr-4" style={{width: "14%"}} onClick={handleSaveClick}>
+            Save
+          </button>
+          <button className="btn btn-outline-warning mr-4" style={{marginLeft: "20px", width: "14%"}} onClick={handleCloseClick}>
+            Exit
+          </button>
+          <button className="btn btn-outline-danger" style={{marginLeft: "20px", width: "14%"}} onClick={handleCloseClick}>
+            Delete
+          </button>
         </div>
+      ) : (
+        <>
+          <h1 className="mb-4">Your journal, your memories.</h1>
+          <button className="btn btn-success mt-4" onClick={handleToggleEditor}>
+            Start Writing
+          </button>
+        </>
       )}
     </div>
   );

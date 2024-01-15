@@ -66,6 +66,7 @@ export default function Editor() {
           <AutoLinkPlugin />
           <ListMaxIndentLevelPlugin maxDepth={7} />
           <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
+          
         </div>
       </div>
     </LexicalComposer>

@@ -186,7 +186,7 @@ h1 {
   margin: 20px auto 20px auto;
   border-radius: 2px;
   max-width: 95%;
-  color: #000;
+  color: #ffffff;
   position: relative;
   line-height: 20px;
   font-weight: 400;
@@ -196,7 +196,7 @@ h1 {
 }
 
 .editor-inner {
-  background: #fff;
+  background: #09090c;
   position: relative;
 }
 
@@ -484,7 +484,7 @@ pre::-webkit-scrollbar-thumb {
 .toolbar {
   display: flex;
   margin-bottom: 1px;
-  background: #fff;
+  background: #ffffff;
   padding: 4px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
