@@ -68,7 +68,7 @@ function SignOut() {
     <button
       onClick={() => auth.signOut()}
       type="button"
-      className="btn btn-outline-danger"
+      className="btn btn-outline-secondary"
     >
       Sign-Out
     </button>
