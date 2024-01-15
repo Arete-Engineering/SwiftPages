@@ -21,7 +21,7 @@ import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
 
 function Placeholder() {
-  return <div className="editor-placeholder">Your journal, your memories...</div>;
+  return <div className="editor-placeholder">Note your memories...</div>;
 }
 
 const editorConfig = {
