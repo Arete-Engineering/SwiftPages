@@ -1,11 +1,10 @@
 /* HEADER */
 .App_header {
-  background-color: #ffffff;
   padding: 20px;
-  color: black;
 }
 
 .App_header ul {
+  text-decoration: none;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -14,8 +13,14 @@
   justify-content: space-around; /* Equal spacing between items */
 }
 
+.App_header a {
+  text-decoration: none;
+  color: #eaf0f3;
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+}
+
 .App_header a:hover {
-  text-decoration: underline;
+  color: #c6d5e7;
 }
 
 /* PROFILE PICTURE */
@@ -23,6 +28,7 @@
   border-radius: 50%;
   max-width: 50px;
   max-height: 10%;
+  padding: 1px;
 }
 
 /* SIGN-IN */

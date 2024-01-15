@@ -16,7 +16,8 @@ const auth = firebase.auth();
 export default function App() {
   const [ user ] = useAuthState(auth);
   return (
-    <div className="App">
+    document.body.style = 'background: #1E1E1E',
+    <div className="App" style={{ backgroundColor: '#1E1E1E'}}>
       {user === null ? <SignIn /> : (
         <>
           <Header />

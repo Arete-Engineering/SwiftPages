@@ -1,6 +1,6 @@
 import profile_pic from "./temp-pfp.jpg";
 import "./styles.css";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
@@ -26,21 +26,21 @@ export default function Header() {
     const profile_picture = user ? user.photoURL : profile_pic;
 
     return (
-        <header className="App_header">
+        <header className="App_header" style={{backgroundColor: '#0B0B0B'}}>
             <ul>
-                <li><a href="#">{project_name}</a></li>
+                <li><a href="#" className="">{project_name}</a></li>
                 <li><a href="#">Earth</a></li>
-                <li><a href="#">Create</a></li>
-                <li><a href="#">Memory</a></li>
-                <li><SignOut /></li>
+                <li><a href="#">Write</a></li>
+                <li><a href="#">Journals</a></li>
                 <li><img src={profile_picture} alt="ProfilePicture" className="profile_picture"/></li>
+                <li><SignOut /></li>
             </ul>
         </header>
     )
 }
 
 function SignOut() {
-    return <button onClick={() => auth.signOut()}>Sign-Out</button>
+    return <button onClick={() => auth.signOut()} type="button" class="btn btn-outline-danger">Sign-Out</button>
 }
 
 function SignIn() {
