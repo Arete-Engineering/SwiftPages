@@ -13,6 +13,13 @@ export default function Board() {
     setShowEditor(false);
   };
 
+  const handleDeleteClick = () => {
+    const comfirmDelete = window.confirm("Are you sure you want to delete?");
+    if (comfirmDelete) {
+      setShowEditor(false);
+    }
+  };
+
   const handleToggleEditor = () => {
     setShowEditor(!showEditor);
   };
@@ -22,13 +29,25 @@ export default function Board() {
       {showEditor ? (
         <div>
           <Editor />
-          <button className="btn btn-outline-success mr-4" style={{width: "14%"}} onClick={handleSaveClick}>
+          <button
+            className="btn btn-outline-success mr-4"
+            style={{ width: "14%" }}
+            onClick={handleSaveClick}
+          >
             Save
           </button>
-          <button className="btn btn-outline-warning mr-4" style={{marginLeft: "20px", width: "14%"}} onClick={handleCloseClick}>
+          <button
+            className="btn btn-outline-warning mr-4"
+            style={{ marginLeft: "20px", width: "14%" }}
+            onClick={handleCloseClick}
+          >
             Exit
           </button>
-          <button className="btn btn-outline-danger" style={{marginLeft: "20px", width: "14%"}} onClick={handleCloseClick}>
+          <button
+            className="btn btn-outline-danger"
+            style={{ marginLeft: "20px", width: "14%" }}
+            onClick={handleDeleteClick}
+          >
             Delete
           </button>
         </div>
