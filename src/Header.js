@@ -19,7 +19,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 
-let project_name = "Opulent";
+let project_name = "Opulent ❤️";
 
 export default function Header() {
   const [user] = useAuthState(auth);
@@ -40,13 +40,13 @@ export default function Header() {
           </a>
         </li>
         <li>
-          <a href="#">Explore</a>
+          <a href="#">Explore 🌎</a>
         </li>
         <li>
-          <a href="#">Write</a>
+          <a href="#">Write 🖊️</a>
         </li>
         <li>
-          <a href="#">Journals</a>
+          <a href="#">Journals 📃</a>
         </li>
         <li>
           <img
