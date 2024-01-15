@@ -26,7 +26,7 @@ export default function Header() {
   const profile_picture = user ? user.photoURL : profile_pic;
 
   return (
-    <header className="App_header" style={{ backgroundColor: "#010409" }}>
+    <header className="App_header" style={{ backgroundColor: "#0A0A0E" }}>
       <ul>
         <li>
           <a
@@ -39,7 +39,7 @@ export default function Header() {
           </a>
         </li>
         <li>
-          <a href="#">Earth</a>
+          <a href="#">Explore</a>
         </li>
         <li>
           <a href="#">Write</a>

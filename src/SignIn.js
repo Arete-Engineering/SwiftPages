@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const auth = firebase.auth();
 
 let project_name = "Welcome to Opulent";
-let tagline = "Log in to your account";
+let tagline = "Your first healthy step forward";
 
 export default function SignIn() {
   const [user] = useAuthState(auth);
@@ -64,11 +64,9 @@ export default function SignIn() {
             <button
               style={{
                 width: "100%",
-                backgroundColor: "#ad1efd",
-                borderColor: "#ad1efd",
               }}
               type="submit"
-              className="glow-btn btn btn-primary me-4"
+              className="glow-btn me-4"
             >
               Continue 👋
             </button>
@@ -77,8 +75,8 @@ export default function SignIn() {
             <button
               style={{
                 width: "100%",
-                backgroundColor: "#ad1efd",
-                borderColor: "#ad1efd",
+                backgroundColor: "#424D42",
+                borderColor: "#424D42",
               }}
               type="submit"
               className="btn btn-primary"
