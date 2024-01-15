@@ -1,6 +1,7 @@
 /* HEADER */
 .App_header {
-  padding: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #1A1F26;
 }
 
 .App_header ul {
@@ -16,11 +17,11 @@
 .App_header a {
   text-decoration: none;
   color: #eaf0f3;
-  font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif;
+  font-family: "Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
 
 .App_header a:hover {
-  color: #c6d5e7;
+  color: #92c3ff;
 }
 
 /* PROFILE PICTURE */

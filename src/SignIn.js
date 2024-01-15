@@ -68,7 +68,7 @@ export default function SignIn() {
                 borderColor: "#ad1efd",
               }}
               type="submit"
-              className="btn btn-primary me-4"
+              className="glow-btn btn btn-primary me-4"
             >
               Continue 👋
             </button>

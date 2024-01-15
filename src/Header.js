@@ -19,42 +19,69 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 
-let project_name = 'Opulent';
+let project_name = "Opulent";
 
 export default function Header() {
-    const [user] = useAuthState(auth)
-    const profile_picture = user ? user.photoURL : profile_pic;
+  const [user] = useAuthState(auth);
+  const profile_picture = user ? user.photoURL : profile_pic;
 
-    return (
-        <header className="App_header" style={{backgroundColor: '#0B0B0B'}}>
-            <ul>
-                <li><a href="#" className="">{project_name}</a></li>
-                <li><a href="#">Earth</a></li>
-                <li><a href="#">Write</a></li>
-                <li><a href="#">Journals</a></li>
-                <li><img src={profile_picture} alt="ProfilePicture" className="profile_picture"/></li>
-                <li><SignOut /></li>
-            </ul>
-        </header>
-    )
+  return (
+    <header className="App_header" style={{ backgroundColor: "#010409" }}>
+      <ul>
+        <li>
+          <a
+            href="#"
+            style={{
+              fontWeight: "bold",
+            }}
+          >
+            {project_name}
+          </a>
+        </li>
+        <li>
+          <a href="#">Earth</a>
+        </li>
+        <li>
+          <a href="#">Write</a>
+        </li>
+        <li>
+          <a href="#">Journals</a>
+        </li>
+        <li>
+          <img
+            src={profile_picture}
+            alt="ProfilePicture"
+            className="profile_picture"
+          />
+        </li>
+        <li>
+          <SignOut />
+        </li>
+      </ul>
+    </header>
+  );
 }
 
 function SignOut() {
-    return <button onClick={() => auth.signOut()} type="button" class="btn btn-outline-danger">Sign-Out</button>
+  return (
+    <button
+      onClick={() => auth.signOut()}
+      type="button"
+      className="btn btn-outline-danger"
+    >
+      Sign-Out
+    </button>
+  );
 }
 
 function SignIn() {
-    const [user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
 
-    const signInWithGoogle = () => {
-        const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider);
-    };
-    const signingIn = (
-        <button onClick={signInWithGoogle}>Sign-In</button>
-    );
-    const signingOut = (
-        <button onClick={() => auth.signOut()}>Sign-Out</button>
-    );
-    return user ? signingOut : signingIn;
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  };
+  const signingIn = <button onClick={signInWithGoogle}>Sign-In</button>;
+  const signingOut = <button onClick={() => auth.signOut()}>Sign-Out</button>;
+  return user ? signingOut : signingIn;
 }
