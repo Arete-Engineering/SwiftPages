@@ -18,6 +18,7 @@ export default function App() {
   const [showHeader, setShowHeader] = useState(true);
   const [showEditor, setShowEditor] = useState(false);
   const [backgroundColor, setBackgroundColor] = useState("black");
+  document.body.style = `background: ${backgroundColor}`
 
   const handleButtonClick = () => {
     if (showHeader) {
@@ -47,4 +48,4 @@ export default function App() {
       </div>
     </>
   );
-}
+};
