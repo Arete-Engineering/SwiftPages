@@ -3,27 +3,48 @@ import Editor from "./Editor";
 import Header from "./Header";
 import Save from "./Save";
 import SignIn from "./SignIn";
-import Board from "./Board"
+import Board from "./Board";
+import { useState } from "react";
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-
 const auth = firebase.auth();
 
 export default function App() {
-  const [ user ] = useAuthState(auth);
+  const [user] = useAuthState(auth);
+  const [showHeader, setShowHeader] = useState(true);
+  const [showEditor, setShowEditor] = useState(false);
+  const [backgroundColor, setBackgroundColor] = useState("black");
+
+  const handleButtonClick = () => {
+    if (showHeader) {
+      setShowHeader(false);
+      setShowEditor(true);
+      setBackgroundColor("white");
+      document.body.style = `background: white`
+      
+    } else {
+      setShowHeader(true);
+      setShowEditor(false);
+      setBackgroundColor("black");
+      document.body.style = `background: black`
+    }
+  };
+
   return (
-    document.body.style = 'background: #09090c',
-    <div className="App" style={{ backgroundColor: '#09090c'}}>
-      {user === null ? <SignIn /> : (
-        <>
-          <Header />
-          <Board />
-        </>
-      )}
-    </div>
+    <>
+      <div className="App" style={{ backgroundColor: backgroundColor }}>
+        {user === null ? <SignIn /> : (
+          <>
+            {showHeader && <Header />}
+            {showEditor && <Editor />}
+            <button className="btn btn-success mt-4" onClick={handleButtonClick}>Start Writing</button>
+          </>
+        )}
+      </div>
+    </>
   );
 }
