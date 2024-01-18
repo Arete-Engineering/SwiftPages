@@ -1,14 +1,16 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./styles.css";
+
+//Pages Import
 import Home from "./pages/Home";
 import TextEditor from "./pages/TextEditor";
 import SignIn from "./pages/SignIn";
 
-import "./styles.css";
-import { useState } from "react";
-
+//Firebase Import
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
+import { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const auth = firebase.auth();
@@ -18,7 +20,6 @@ export default function App() {
   const [backgroundColor, setBackgroundColor] = useState("black");
   document.body.style = `background: ${backgroundColor}`;
 
-  // If loading, you can show a loading indicator or just return null
   if (loading) {
     return null;
   }

@@ -1,4 +1,5 @@
 import Editor from "../components/Editor";
+import Board from "../components/Board";
 
 export default function TextEditor() {
   return (
@@ -7,6 +8,7 @@ export default function TextEditor() {
         Home
       </a>
       <Editor />
+      <Board />
     </>
   );
 }

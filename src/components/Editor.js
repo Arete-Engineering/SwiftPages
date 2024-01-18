@@ -25,9 +25,7 @@ function Placeholder() {
 }
 
 const editorConfig = {
-  // The editor theme
   theme: ExampleTheme,
-  // Handling of errors during update
   onError(error) {
     throw error;
   },
