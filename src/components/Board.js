@@ -2,46 +2,47 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Board() {
-  const [showEditor, setShowEditor] = useState(false);
-
   const handleSaveClick = () => {
     console.log("Save clicked!");
   };
 
   const handleCloseClick = () => {
-    setShowEditor(false);
+    console.log("Close clicked!");
   };
 
   const handleDeleteClick = () => {
     const comfirmDelete = window.confirm("Are you sure you want to delete?");
     if (comfirmDelete) {
-      setShowEditor(false);
+      console.log("Delete clicked!");
     }
   };
 
   return (
-    <div className="mt-4">
-      <button
-        className="btn btn-outline-success mr-4"
-        style={{ width: "14%" }}
-        onClick={handleSaveClick}
-      >
-        Save
-      </button>
-      <button
-        className="btn btn-outline-warning mr-4"
-        style={{ marginLeft: "20px", width: "14%" }}
-        onClick={handleCloseClick}
-      >
-        Exit
-      </button>
-      <button
-        className="btn btn-outline-danger"
-        style={{ marginLeft: "20px", width: "14%" }}
-        onClick={handleDeleteClick}
-      >
-        Delete
-      </button>
+    <div style={{ backgroundColor: "#191C20" }}>
+      <ul>
+        <a
+          className="btn btn-dark mr-4 mt-1 mb-1 btn-sm"
+          style={{ width: "14%", border: "1px solid #555" }}
+          onClick={handleSaveClick}
+        >
+          Publish
+        </a>
+        <a
+          href="/home"
+          className="btn btn-dark mr-4 mt-1 mb-1 btn-sm"
+          style={{ marginLeft: "20px", width: "14%", border: "1px solid #555" }}
+          onClick={handleCloseClick}
+        >
+          Close
+        </a>
+        <a
+          className="btn btn-dark mt-1 mb-1 btn-sm"
+          style={{ marginLeft: "20px", width: "14%", border: "1px solid #555" }}
+          onClick={handleDeleteClick}
+        >
+          Delete
+        </a>
+      </ul>
     </div>
   );
 }

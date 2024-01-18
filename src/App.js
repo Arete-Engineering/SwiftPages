@@ -19,8 +19,6 @@ const auth = firebase.auth();
 
 export default function App() {
   const [user, loading] = useAuthState(auth);
-  const [backgroundColor, setBackgroundColor] = useState("black");
-  document.body.style = `background: ${backgroundColor}`;
 
   if (loading) {
     return null;
@@ -28,7 +26,7 @@ export default function App() {
 
   return (
     <>
-      <div className="App" style={{ backgroundColor: backgroundColor }}>
+      <div className="App" >
         <BrowserRouter>
           <Routes>
             <Route
