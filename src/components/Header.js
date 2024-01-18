@@ -29,7 +29,7 @@ export default function Header() {
       <ul>
         <li>
           <a
-            href="#"
+            href="/home"
             style={{
               fontWeight: 'bold',
               color: '#a4a4a4'
@@ -39,13 +39,13 @@ export default function Header() {
           </a>
         </li>
         <li>
-          <a href="#">Explore</a>
+          <a href="/explore">Explore</a>
         </li>
         <li>
-          <a href="#">Write</a>
+          <a href="/editor">Write</a>
         </li>
         <li>
-          <a href="#">Journal</a>
+          <a href="/journal">Journal</a>
         </li>
         <li>
           <img
@@ -74,14 +74,14 @@ function SignOut() {
   );
 }
 
-function SignIn() {
-  const [user] = useAuthState(auth);
+// function SignIn() {
+//   const [user] = useAuthState(auth);
 
-  const signInWithGoogle = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider);
-  };
-  const signingIn = <button onClick={signInWithGoogle}>Sign-In</button>;
-  const signingOut = <button onClick={() => auth.signOut()}>Sign-Out</button>;
-  return user ? signingOut : signingIn;
-}
+//   const signInWithGoogle = () => {
+//     const provider = new firebase.auth.GoogleAuthProvider();
+//     auth.signInWithPopup(provider);
+//   };
+//   const signingIn = <button onClick={signInWithGoogle}>Sign-In</button>;
+//   const signingOut = <button onClick={() => auth.signOut()}>Sign-Out</button>;
+//   return user ? signingOut : signingIn;
+// }

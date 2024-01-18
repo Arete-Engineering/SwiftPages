@@ -5,6 +5,8 @@ import "./styles.css";
 import Home from "./pages/Home";
 import TextEditor from "./pages/TextEditor";
 import SignIn from "./pages/SignIn";
+import Explore from "./pages/Explore";
+import Journal from "./pages/Journal";
 
 //Firebase Import
 import firebase from "firebase/compat/app";
@@ -42,6 +44,14 @@ export default function App() {
             <Route
               path="/home"
               element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
+            />
+            <Route
+              path="/explore"
+              element={user !== null ? <Explore /> : <Navigate to="/sign-in" />}
+            />
+            <Route
+              path="/journal"
+              element={user !== null ? <Journal /> : <Navigate to="/sign-in" />}
             />
           </Routes>
         </BrowserRouter>
