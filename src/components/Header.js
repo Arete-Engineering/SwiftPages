@@ -25,14 +25,14 @@ export default function Header() {
   const profile_picture = user ? user.photoURL : "Profile Picture Null";
 
   return (
-    <header className="App_header" style={{ backgroundColor: "#0A0A0E" }}>
+    <header className="App_header" style={{ backgroundColor: "#FFFFFF" }}>
       <ul>
         <li>
           <a
             href="/home"
             style={{
               fontWeight: 'bold',
-              color: '#a4a4a4'
+              color: '#223037'
             }}
           >
             {project_name}
@@ -67,7 +67,7 @@ function SignOut() {
     <button
       onClick={() => auth.signOut()}
       type="button"
-      className="btn btn-dark btn-sm"
+      className="btn btn-light btn-sm"
     >
       Sign-Out
     </button>

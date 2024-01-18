@@ -6,7 +6,7 @@
 /* HEADER */
 .App_header {
   padding: 10px;
-  border-bottom: 1px solid #1a1f26;
+  /* border-bottom: 1px solid #1a1f26; */
 }
 
 .App_header ul {
@@ -21,13 +21,13 @@
 
 .App_header a {
   text-decoration: none;
-  color: #a4a4a4;
+  color: #364C57;
   font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 .App_header a:hover {
-  color: #92c3ff;
+  color: #0064e0;
 }
 
 /* CUSTOM */
