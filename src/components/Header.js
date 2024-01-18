@@ -73,15 +73,3 @@ function SignOut() {
     </button>
   );
 }
-
-// function SignIn() {
-//   const [user] = useAuthState(auth);
-
-//   const signInWithGoogle = () => {
-//     const provider = new firebase.auth.GoogleAuthProvider();
-//     auth.signInWithPopup(provider);
-//   };
-//   const signingIn = <button onClick={signInWithGoogle}>Sign-In</button>;
-//   const signingOut = <button onClick={() => auth.signOut()}>Sign-Out</button>;
-//   return user ? signingOut : signingIn;
-// }
