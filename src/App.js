@@ -1,9 +1,9 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import TextEditor from "./pages/TextEditor";
+import SignIn from "./pages/SignIn";
+
 import "./styles.css";
-import Editor from "./Editor";
-import Header from "./Header";
-import Save from "./Save";
-import SignIn from "./SignIn";
-import Board from "./Board";
 import { useState } from "react";
 
 import firebase from "firebase/compat/app";
@@ -14,38 +14,37 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const auth = firebase.auth();
 
 export default function App() {
-  const [user] = useAuthState(auth);
-  const [showHeader, setShowHeader] = useState(true);
-  const [showEditor, setShowEditor] = useState(false);
+  const [user, loading] = useAuthState(auth);
   const [backgroundColor, setBackgroundColor] = useState("black");
-  document.body.style = `background: ${backgroundColor}`
+  document.body.style = `background: ${backgroundColor}`;
 
-  const handleButtonClick = () => {
-    if (showHeader) {
-      setShowHeader(false);
-      setShowEditor(true);
-      setBackgroundColor("white");
-      document.body.style = `background: white`
-      
-    } else {
-      setShowHeader(true);
-      setShowEditor(false);
-      setBackgroundColor("black");
-      document.body.style = `background: black`
-    }
-  };
+  // If loading, you can show a loading indicator or just return null
+  if (loading) {
+    return null;
+  }
 
   return (
     <>
       <div className="App" style={{ backgroundColor: backgroundColor }}>
-        {user === null ? <SignIn /> : (
-          <>
-            {showHeader && <Header />}
-            {showEditor && <Editor />}
-            <button className="btn btn-success mt-4" onClick={handleButtonClick}>Start Writing</button>
-          </>
-        )}
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path="/sign-in"
+              element={user === null ? <SignIn /> : <Navigate to="/home" />}
+            />
+            <Route
+              path="/editor"
+              element={
+                user !== null ? <TextEditor /> : <Navigate to="/sign-in" />
+              }
+            />
+            <Route
+              path="/home"
+              element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
+            />
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );
-};
+}

@@ -1,5 +1,4 @@
-import profile_pic from "./temp-pfp.jpg";
-import "./styles.css";
+import "../styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
@@ -23,7 +22,7 @@ let project_name = "Opulent ❤️";
 
 export default function Header() {
   const [user] = useAuthState(auth);
-  const profile_picture = user ? user.photoURL : profile_pic;
+  const profile_picture = user ? user.photoURL : "Profile Picture Null";
 
   return (
     <header className="App_header" style={{ backgroundColor: "#0A0A0E" }}>
@@ -40,13 +39,13 @@ export default function Header() {
           </a>
         </li>
         <li>
-          <a href="#">Explore 🌎</a>
+          <a href="#">Explore</a>
         </li>
         <li>
-          <a href="#">Write 🖊️</a>
+          <a href="#">Write</a>
         </li>
         <li>
-          <a href="#">Journals 📃</a>
+          <a href="#">Journal</a>
         </li>
         <li>
           <img

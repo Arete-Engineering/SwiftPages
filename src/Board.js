@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Editor from "./Editor";
+import Editor from "./components/Editor";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Board() {
