@@ -18,7 +18,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 
-let project_name = "Opulent ❤️";
+let project_name = "Opulent Publish";
 
 export default function Header() {
   const [user] = useAuthState(auth);
@@ -39,13 +39,13 @@ export default function Header() {
           </a>
         </li>
         <li>
-          <a href="/explore">Explore</a>
+        <input className="form-control form-control-sm" type="text" placeholder="Search" aria-label=".form-control-sm example"></input>
         </li>
         <li>
           <a href="/editor">Write</a>
         </li>
         <li>
-          <a href="/journal">Journal</a>
+          <a href="/journal">Documents</a>
         </li>
         <li>
           <img
