@@ -8,7 +8,6 @@ export default function TextEditor() {
   return (
     <>
       <PageHeader />
-      <Board />
       <Editor />
     </>
   );
