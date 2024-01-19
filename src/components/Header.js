@@ -68,6 +68,7 @@ function SignOut() {
       onClick={() => auth.signOut()}
       type="button"
       className="btn btn-light btn-sm"
+      style={{backgroundColor: "#0064e0", color: "white"}}
     >
       Sign-Out
     </button>
