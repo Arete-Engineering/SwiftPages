@@ -23,11 +23,11 @@ const QuillEditor = () => {
 
   const saveToFirebase = () => {
     const content = quillInstance.current?.root.innerHTML;
-
+  
     if (content) {
-      const db = firebase.firestore(); // Use firestore() instead of database()
-      const editorContentRef = db.collection('editorContent').doc('documentId'); // Adjust the collection and document ID
-
+      const db = firebase.firestore();
+      const editorContentRef = db.collection('editorContent').doc(); // No argument for doc()
+  
       editorContentRef.set({
         content,
       })
@@ -39,7 +39,7 @@ const QuillEditor = () => {
       });
     } else {
       console.warn('Content is empty. Nothing to save.');
-    }
+    };
   };
 
   return (
