@@ -7,7 +7,7 @@ export default function TextEditor() {
   document.body.style = `background: white`;
   return (
     <>
-      <PageHeader />
+      {/* <PageHeader /> */}
       <QuillEditor />
     </>
   );

@@ -55,6 +55,10 @@ export default function App() {
               path="/"
               element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
             />
+            <Route
+              path="*"
+              element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
+            />
           </Routes>
         </BrowserRouter>
       </div>

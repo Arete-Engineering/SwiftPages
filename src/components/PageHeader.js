@@ -20,7 +20,7 @@ export default function PageHeader() {
         type="text"
         class="form-control"
         placeholder="Document Title"
-        aria-label="Recipient's username with two button addons"
+        aria-label="Document Title"
       ></input>
       <a
         className="btn btn-success"
