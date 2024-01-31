@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import Editor from "../components/Editor";
+import QuillEditor from "../components/QuillEditor";
 import Board from "../components/Board";
 import PageHeader from "../components/PageHeader";
 
@@ -8,7 +8,7 @@ export default function TextEditor() {
   return (
     <>
       <PageHeader />
-      <Editor />
+      <QuillEditor />
     </>
   );
 }
