@@ -32,7 +32,7 @@ export default function SignIn() {
           <h5 style={{ fontSize: "18px", color: "#98a1b2" }} className="mb-4">
             {tagline}
           </h5>
-          <div className="form-group mb-4">
+          {/* <div className="form-group mb-4">
             <label className="form-label">🔒</label>
             <input
               type="email"
@@ -83,9 +83,9 @@ export default function SignIn() {
             >
               Forgot Password
             </button>
-          </div>
+          </div> */}
           <div>
-            <label className="form-label">only google sign-in works for now</label>
+            <label className="form-label">only google sign-in works for now :)</label>
             <br />
             <button
               type="button"
