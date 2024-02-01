@@ -28,10 +28,9 @@ const DocumentView = () => {
 
   return (
     <div>
-      <h1>Document View</h1>
       {documentData ? (
         <>
-          <h3>{documentData.documentTitle}</h3>
+          <h1>{documentData.documentTitle}</h1>
           <div dangerouslySetInnerHTML={{ __html: documentData.content }} />
         </>
       ) : (

@@ -31,15 +31,20 @@ export default function Header() {
           <a
             href="/home"
             style={{
-              fontWeight: 'bold',
-              color: '#223037'
+              fontWeight: "bold",
+              color: "#223037",
             }}
           >
             {project_name}
           </a>
         </li>
         <li>
-        <input className="form-control form-control-sm" type="text" placeholder="Search" aria-label=".form-control-sm example"></input>
+          <input
+            className="form-control form-control-sm"
+            type="text"
+            placeholder="Search"
+            aria-label=".form-control-sm example"
+          ></input>
         </li>
         <li>
           <a href="/explore">Explore</a>
@@ -71,7 +76,7 @@ function SignOut() {
       onClick={() => auth.signOut()}
       type="button"
       className="btn btn-light btn-sm"
-      style={{backgroundColor: "#0064e0", color: "white"}}
+      style={{ backgroundColor: "#0064e0", color: "white" }}
     >
       Sign-Out
     </button>

@@ -28,7 +28,7 @@ const Explore = ({ userID }) => {
 
   return (
     <div>
-        <Header />
+      <Header />
       <h2>Documents:</h2>
       <ul>
         {documents.map((document) => (

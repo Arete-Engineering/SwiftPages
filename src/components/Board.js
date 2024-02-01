@@ -18,11 +18,17 @@ export default function Board() {
   };
 
   return (
-    <div style={{ backgroundColor: "white", borderBottom: "2px solid #F1F4F7"}}>
+    <div
+      style={{ backgroundColor: "white", borderBottom: "2px solid #F1F4F7" }}
+    >
       <ul>
         <a
           className="btn btn-light mr-4 mt-1 mb-1 btn-sm"
-          style={{ width: "14%", border: "1px solid #F1F4F7", color: "#364C57" }}
+          style={{
+            width: "14%",
+            border: "1px solid #F1F4F7",
+            color: "#364C57",
+          }}
           onClick={handleSaveClick}
         >
           Publish
@@ -30,14 +36,24 @@ export default function Board() {
         <a
           href="/home"
           className="btn btn-light mr-4 mt-1 mb-1 btn-sm"
-          style={{ marginLeft: "20px", width: "14%", border: "1px solid #F1F4F7", color: "#364C57" }}
+          style={{
+            marginLeft: "20px",
+            width: "14%",
+            border: "1px solid #F1F4F7",
+            color: "#364C57",
+          }}
           onClick={handleCloseClick}
         >
           Close
         </a>
         <a
           className="btn btn-light mt-1 mb-1 btn-sm"
-          style={{ marginLeft: "20px", width: "14%", border: "1px solid #F1F4F7", color: "#364C57" }}
+          style={{
+            marginLeft: "20px",
+            width: "14%",
+            border: "1px solid #F1F4F7",
+            color: "#364C57",
+          }}
           onClick={handleDeleteClick}
         >
           Delete

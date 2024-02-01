@@ -85,7 +85,9 @@ export default function SignIn() {
             </button>
           </div> */}
           <div>
-            <label className="form-label">only google sign-in works for now :)</label>
+            <label className="form-label">
+              only google sign-in works for now :)
+            </label>
             <br />
             <button
               type="button"

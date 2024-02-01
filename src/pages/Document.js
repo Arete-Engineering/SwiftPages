@@ -5,7 +5,7 @@ import "firebase/compat/firestore";
 import Header from "../components/Header";
 import DocumentList from "../components/DocumentList";
 
-export default function Document () {
+export default function Document() {
   const userID = firebase.auth().currentUser?.uid;
 
   return (
