@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./styles.css";
 
-//Pages Import
+// Pages Import
 import Home from "./pages/Home";
 import TextEditor from "./pages/TextEditor";
 import SignIn from "./pages/SignIn";
 import Explore from "./pages/Explore";
 import Journal from "./pages/Journal";
+import DocumentView from "./components/DocumentView"; // Import DocumentView component
 
-//Firebase Import
+// Firebase Import
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
@@ -26,7 +27,7 @@ export default function App() {
 
   return (
     <>
-      <div className="App" >
+      <div className="App">
         <BrowserRouter>
           <Routes>
             <Route
@@ -44,9 +45,18 @@ export default function App() {
               element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
             />
             <Route
-              path="/explore"
-              element={user !== null ? <Explore /> : <Navigate to="/sign-in" />}
-            />
+  path="/explore/*"
+  element={
+    user !== null ? (
+      <Routes>
+        <Route path="/" element={<Explore />} />
+        <Route path=":id" element={<DocumentView />} />
+      </Routes>
+    ) : (
+      <Navigate to="/sign-in" />
+    )
+  }
+/>
             <Route
               path="/journal"
               element={user !== null ? <Journal /> : <Navigate to="/sign-in" />}
