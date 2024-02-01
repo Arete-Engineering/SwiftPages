@@ -29,7 +29,7 @@ const Explore = ({ userID }) => {
   return (
     <div>
         <Header />
-      <h2>Your Documents:</h2>
+      <h2>Documents:</h2>
       <ul>
         {documents.map((document) => (
           <li key={document.id}>

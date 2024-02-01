@@ -42,7 +42,7 @@ export default function Header() {
         <input className="form-control form-control-sm" type="text" placeholder="Search" aria-label=".form-control-sm example"></input>
         </li>
         <li>
-          <a href="/explore">Expore</a>
+          <a href="/explore">Explore</a>
         </li>
         <li>
           <a href="/editor">Write</a>
