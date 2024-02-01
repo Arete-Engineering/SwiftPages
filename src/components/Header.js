@@ -45,7 +45,7 @@ export default function Header() {
           <a href="/editor">Write</a>
         </li>
         <li>
-          <a href="/journal">Documents</a>
+          <a href="/document">Documents</a>
         </li>
         <li>
           <img

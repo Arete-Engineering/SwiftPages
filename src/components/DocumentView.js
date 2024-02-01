@@ -37,6 +37,7 @@ const DocumentView = () => {
       ) : (
         <p>Loading...</p>
       )}
+      <a href="/document">Back to Document List</a>
     </div>
   );
 };

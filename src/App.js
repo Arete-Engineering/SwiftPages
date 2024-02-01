@@ -5,7 +5,7 @@ import "./styles.css";
 import Home from "./pages/Home";
 import TextEditor from "./pages/TextEditor";
 import SignIn from "./pages/SignIn";
-import Explore from "./pages/Explore";
+import Document from "./pages/Document";
 import Journal from "./pages/Journal";
 import DocumentView from "./components/DocumentView"; // Import DocumentView component
 
@@ -45,11 +45,11 @@ export default function App() {
               element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
             />
             <Route
-  path="/explore/*"
+  path="/Document/*"
   element={
     user !== null ? (
       <Routes>
-        <Route path="/" element={<Explore />} />
+        <Route path="/" element={<Document />} />
         <Route path=":id" element={<DocumentView />} />
       </Routes>
     ) : (
