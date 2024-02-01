@@ -59,6 +59,7 @@ const QuillEditor = () => {
       />
       <div ref={editorRef} />
       <button onClick={saveToFirebase}>Save to Firebase</button>
+      <a href="/home">Go Home</a>
     </div>
   );
 };
