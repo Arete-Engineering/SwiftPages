@@ -28,7 +28,7 @@ const DocumentView = () => {
 
   return (
     <div>
-      <h2>Document View</h2>
+      <h1>Document View</h1>
       {documentData ? (
         <>
           <h3>{documentData.documentTitle}</h3>

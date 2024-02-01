@@ -7,7 +7,8 @@ import TextEditor from "./pages/TextEditor";
 import SignIn from "./pages/SignIn";
 import Document from "./pages/Document";
 import Journal from "./pages/Journal";
-import DocumentView from "./components/DocumentView"; // Import DocumentView component
+import DocumentView from "./components/DocumentView";
+import Explore from "./pages/Explore";
 
 // Firebase Import
 import firebase from "firebase/compat/app";
@@ -45,21 +46,25 @@ export default function App() {
               element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
             />
             <Route
-  path="/Document/*"
-  element={
-    user !== null ? (
-      <Routes>
-        <Route path="/" element={<Document />} />
-        <Route path=":id" element={<DocumentView />} />
-      </Routes>
-    ) : (
-      <Navigate to="/sign-in" />
-    )
-  }
-/>
+              path="/Document/*"
+              element={
+                user !== null ? (
+                  <Routes>
+                    <Route path="/" element={<Document />} />
+                    <Route path=":id" element={<DocumentView />} />
+                  </Routes>
+                ) : (
+                  <Navigate to="/sign-in" />
+                )
+              }
+            />
             <Route
               path="/journal"
               element={user !== null ? <Journal /> : <Navigate to="/sign-in" />}
+            />
+            <Route
+              path="/explore"
+              element={user !== null ? <Explore /> : <Navigate to="/sign-in" />}
             />
             <Route
               path="/"

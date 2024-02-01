@@ -42,6 +42,9 @@ export default function Header() {
         <input className="form-control form-control-sm" type="text" placeholder="Search" aria-label=".form-control-sm example"></input>
         </li>
         <li>
+          <a href="/explore">Expore</a>
+        </li>
+        <li>
           <a href="/editor">Write</a>
         </li>
         <li>
