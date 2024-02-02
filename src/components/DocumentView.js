@@ -31,7 +31,10 @@ const DocumentView = () => {
       {documentData ? (
         <>
           <h1>{documentData.documentTitle}</h1>
-          <div dangerouslySetInnerHTML={{ __html: documentData.content }} />
+          <div
+            className="documentView"
+            dangerouslySetInnerHTML={{ __html: documentData.content }}
+          />
         </>
       ) : (
         <p>Loading...</p>
