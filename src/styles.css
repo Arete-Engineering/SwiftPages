@@ -9,6 +9,27 @@
     "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+.welcome {
+  padding: 30px;
+  display: block;
+  text-align: left;
+  color: #333;
+  font-size: 18px;
+  font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* DOCUMENT LIST */
+.documentList {
+  padding: 30px;
+  display: block;
+  text-align: left;
+  color: #333;
+  font-size: 18px;
+  font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
 /* HEADER */
 .App_header {
   padding: 10px;
@@ -27,7 +48,7 @@
 
 .App_header a {
   text-decoration: none;
-  color: #364C57;
+  color: #364c57;
   font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
 }

@@ -8,7 +8,11 @@ export default function Home({ user }) {
       <Header />
       <UpperDashboard />
       <div style={{ backgroundColor: "#F1F4F7" }}>
-        <a className="btn btn-success mt-4" href="/editor">
+        <a
+          className="btn btn-light btn-sm"
+          style={{ backgroundColor: "#0064e0", color: "white" }}
+          href="/editor"
+        >
           Start Writing
         </a>
       </div>

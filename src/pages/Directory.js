@@ -29,17 +29,19 @@ const Directory = ({ userID }) => {
   return (
     <div>
       <Header />
-      <h2>Documents:</h2>
-      <ul>
-        {documents.map((document) => (
-          <li key={document.id}>
-            {/* Use Link to navigate to DocumentView page */}
-            <Link to={`/document/${document.id}`}>
-              {document.documentTitle}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="documentList">
+        <h3>Documents:</h3>
+        <ul>
+          {documents.map((document) => (
+            <li key={document.id}>
+              {/* Use Link to navigate to DocumentView page */}
+              <Link to={`/document/${document.id}`}>
+                {document.documentTitle}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

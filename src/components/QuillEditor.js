@@ -58,8 +58,21 @@ const QuillEditor = () => {
         onChange={(e) => setDocumentTitle(e.target.value)}
       />
       <div ref={editorRef} />
-      <button onClick={saveToFirebase}>Save to Firebase</button>
-      <a href="/home">Go Home</a>
+      <a
+        className="btn btn-light btn-sm"
+        style={{ marginTop: "2%", backgroundColor: "#0064e0", color: "white" }}
+        onClick={saveToFirebase}
+        href="/home"
+      >
+        Save to Firebase
+      </a>
+      <a
+        className="btn btn-light btn-sm"
+        style={{ marginTop: "2%", backgroundColor: "#0064e0", color: "white" }}
+        href="/home"
+      >
+        Go Home
+      </a>
     </div>
   );
 };

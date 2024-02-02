@@ -30,8 +30,8 @@ const DocumentList = ({ userID }) => {
       {documents.length === 0 ? (
         <p>No documents found. Start writing.</p>
       ) : (
-        <div>
-          <h2>Your Documents:</h2>
+        <div className="documentList">
+          <h4>Your Documents:</h4>
           <ul>
             {documents.map((document) => (
               <li key={document.id}>
