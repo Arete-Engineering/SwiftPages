@@ -8,7 +8,7 @@ import SignIn from "./pages/SignIn";
 import Document from "./pages/Document";
 import Journal from "./pages/Journal";
 import DocumentView from "./components/DocumentView";
-import Explore from "./pages/Explore";
+import Directory from "./pages/Directory";
 
 // Firebase Import
 import firebase from "firebase/compat/app";
@@ -63,8 +63,8 @@ export default function App() {
               element={user !== null ? <Journal /> : <Navigate to="/sign-in" />}
             />
             <Route
-              path="/explore"
-              element={user !== null ? <Explore /> : <Navigate to="/sign-in" />}
+              path="/directory"
+              element={user !== null ? <Directory /> : <Navigate to="/sign-in" />}
             />
             <Route
               path="/"

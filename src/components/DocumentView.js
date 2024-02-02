@@ -30,7 +30,7 @@ const DocumentView = () => {
     <div>
       {documentData ? (
         <>
-          <h1>{documentData.documentTitle}</h1>
+          <h1 style={{marginTop: "30px"}}>{documentData.documentTitle}</h1>
           <div
             className="documentView"
             dangerouslySetInnerHTML={{ __html: documentData.content }}
@@ -39,7 +39,7 @@ const DocumentView = () => {
       ) : (
         <p>Loading...</p>
       )}
-      <a href="/document">Back to Document List</a>
+      <a href="/home">Return Home</a>
     </div>
   );
 };

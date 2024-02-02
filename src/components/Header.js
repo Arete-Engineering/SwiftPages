@@ -47,7 +47,7 @@ export default function Header() {
           ></input>
         </li>
         <li>
-          <a href="/explore">Explore</a>
+          <a href="/directory">Directory</a>
         </li>
         <li>
           <a href="/editor">Write</a>

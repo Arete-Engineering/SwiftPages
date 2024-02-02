@@ -4,7 +4,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import Header from "../components/Header";
 
-const Explore = ({ userID }) => {
+const Directory = ({ userID }) => {
   const [documents, setDocuments] = useState([]);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ const Explore = ({ userID }) => {
   );
 };
 
-export default Explore;
+export default Directory;

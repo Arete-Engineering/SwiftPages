@@ -27,17 +27,24 @@ const DocumentList = ({ userID }) => {
 
   return (
     <div>
-      <h2>Your Documents:</h2>
-      <ul>
-        {documents.map((document) => (
-          <li key={document.id}>
-            {/* Use Link to navigate to DocumentView page */}
-            <Link to={`/document/${document.id}`}>
-              {document.documentTitle}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {documents.length === 0 ? (
+        <p>No documents found. Start writing.</p>
+      ) : (
+        <div>
+          <h2>Your Documents:</h2>
+          <ul>
+            {documents.map((document) => (
+              <li key={document.id}>
+                {/* Use Link to navigate to DocumentView page */}
+                <Link to={`/document/${document.id}`}>
+                  {document.documentTitle}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
     </div>
   );
 };
