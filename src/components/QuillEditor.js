@@ -38,6 +38,7 @@ const QuillEditor = () => {
         })
         .then(() => {
           console.log("Content saved to Firebase successfully");
+          window.location.href = "/home";
         })
         .catch((error) => {
           console.error("Error saving content to Firebase:", error);
@@ -58,14 +59,13 @@ const QuillEditor = () => {
         onChange={(e) => setDocumentTitle(e.target.value)}
       />
       <div ref={editorRef} />
-      <a
+      <button
         className="btn btn-light btn-sm"
         style={{ marginTop: "2%", backgroundColor: "#0064e0", color: "white" }}
         onClick={saveToFirebase}
-        href="/home"
       >
         Save to Firebase
-      </a>
+      </button>
       <a
         className="btn btn-light btn-sm"
         style={{ marginTop: "2%", backgroundColor: "#0064e0", color: "white" }}
