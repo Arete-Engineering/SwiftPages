@@ -9,6 +9,24 @@
     "Apple Color Emoji", "Segoe UI Emoji";
 }
 
+/* POST */
+.post {
+  list-style-type: none;
+  border-radius: 5px;
+  display: block;
+  text-align: left;
+  font-size: 18px;
+  border-bottom: #333 30px;
+  font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.post :link{
+  font-size: 25px;
+  text-decoration: none;
+}
+
+/* WELCOME */
 .welcome {
   padding: 30px;
   display: block;

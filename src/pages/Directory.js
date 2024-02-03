@@ -12,7 +12,6 @@ const Directory = ({ userID }) => {
       const db = firebase.firestore();
       const querySnapshot = await db
         .collection("editorContent")
-        // .where("userID", "==", userID)
         .get();
 
       const documentsData = querySnapshot.docs.map((doc) => ({
@@ -30,15 +29,17 @@ const Directory = ({ userID }) => {
     <div>
       <Header />
       <div className="documentList">
-        <h3>Documents:</h3>
+        <h4 style={{marginBottom: "3%", paddingBottom: "black"}}>All Posts</h4>
         <ul>
           {documents.map((document) => (
-            <li key={document.id}>
-              {/* Use Link to navigate to DocumentView page */}
-              <Link to={`/document/${document.id}`}>
-                {document.documentTitle}
-              </Link>
-            </li>
+            <div className="post">
+              <li key={document.id}>
+                <Link to={`/document/${document.id}`}>
+                  {document.documentTitle}
+                </Link>
+                <p>By: Author Name</p>
+              </li>
+            </div>
           ))}
         </ul>
       </div>

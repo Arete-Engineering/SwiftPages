@@ -33,13 +33,14 @@ const DocumentView = () => {
           <h1 style={{marginTop: "30px"}}>{documentData.documentTitle}</h1>
           <div
             className="documentView"
+            style={{marginRight: "10%", marginLeft: "10%"}}
             dangerouslySetInnerHTML={{ __html: documentData.content }}
           />
         </>
       ) : (
         <p>Loading...</p>
       )}
-      <a href="/home">Return Home</a>
+      <a style={{padding: "5%"}} href="/home">Return Home</a>
     </div>
   );
 };

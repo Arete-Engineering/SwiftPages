@@ -35,7 +35,6 @@ const DocumentList = ({ userID }) => {
           <ul>
             {documents.map((document) => (
               <li key={document.id}>
-                {/* Use Link to navigate to DocumentView page */}
                 <Link to={`/document/${document.id}`}>
                   {document.documentTitle}
                 </Link>
