@@ -18,7 +18,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 
-let project_name = "Opulent Publish";
+let project_name = "PageSwift";
 
 export default function Header() {
   const [user] = useAuthState(auth);

@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 const auth = firebase.auth();
 
-let project_name = "Welcome to Opulent";
+let project_name = "Welcome to PageSwift";
 let tagline = "The platform built for dreamers.";
 
 export default function SignIn() {
@@ -85,10 +85,6 @@ export default function SignIn() {
             </button>
           </div> */}
           <div>
-            <label className="form-label">
-              only google sign-in works for now :)
-            </label>
-            <br />
             <button
               type="button"
               className="login-with-google-btn"
