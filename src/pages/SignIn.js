@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 const auth = firebase.auth();
 
-let project_name = "Welcome to PageSwift";
+let project_name = "Welcome to SwiftPages";
 let tagline = "The platform built for dreamers.";
 
 export default function SignIn() {
@@ -17,18 +17,19 @@ export default function SignIn() {
   return (
     <div
       className="d-flex align-items-center justify-content-center vh-100"
-      style={{ backgroundColor: "#09090c" }}
+      style={{ backgroundColor: "#F1F4F7" }}
+      // I like these colors haha: #09090c #F1F4F7
     >
       <div
-        className="card p-5 mb-2 text-white mx-auto"
-        style={{
-          padding: "100px",
-          backgroundColor: "#09090c",
-        }}
+        // className="card p-5 mb-2 text-white mx-auto"
+        // style={{
+        //   padding: "100px",
+        //   backgroundColor: "#F1F4F7",
+        // }}
       >
         <form>
           <div className="form-group"></div>
-          <h1 className="mb-2">{project_name}</h1>
+          <h1 className="mb-2" style={{color: "#223037", fontWeight: "bold"}}>{project_name}</h1>
           <h5 style={{ fontSize: "18px", color: "#98a1b2" }} className="mb-4">
             {tagline}
           </h5>
