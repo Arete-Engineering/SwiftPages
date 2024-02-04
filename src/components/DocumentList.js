@@ -22,16 +22,21 @@ const DocumentList = ({ userID }) => {
   };
 
   const handleDelete = (documentId) => {
-    const isConfirmed = window.confirm("Are you sure you want to delete this page?");
+    const isConfirmed = window.confirm(
+      "Are you sure you want to delete this page?"
+    );
     if (isConfirmed) {
       const documentRef = db.collection("editorContent").doc(documentId);
 
-      documentRef.delete().then(() => {
-        console.log("Document successfully deleted!");
-        fetchDocuments();
-      }).catch((error) => {
-        console.error("Error removing document: ", error);
-      });
+      documentRef
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+          fetchDocuments();
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
     } else {
       console.log("Deletion canceled");
     }
@@ -52,22 +57,35 @@ const DocumentList = ({ userID }) => {
       ) : (
         <div className="documentList">
           <h4>Created Pages</h4>
-          <ul>
+          <ul className="post">
             {documents.map((document) => (
-              <li key={document.id} style={{marginBottom: "4%"}}>
-                <Link to={`/pages/${document.id}`}>
-                  {document.documentTitle}
-                </Link>
-                <p>{removeHtmlTags(document.content.substring(3, 170))}</p>
-                <div>
-                  <button
-                    className="btn btn-secondary btn-sm"
-                    onClick={() => handleDelete(document.id)}
-                  >
-                    Delete
-                  </button>
-                  <button className="btn btn-secondary btn-sm">Edit</button>
+              <li key={document.id} style={{ marginBottom: "4%" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Link to={`/pages/${document.id}`}>
+                    <strong
+                      style={{ color: "#0064e0", textDecoration: "underline" }}
+                    >
+                      {document.documentTitle}
+                    </strong>
+                  </Link>
+                  <div style={{ marginLeft: "10px" }}>
+                    <button
+                      className="btn btn-secondary btn-sm"
+                      onClick={() => handleDelete(document.id)}
+                      style={{ marginRight: "5px" }}
+                    >
+                      Delete
+                    </button>
+                    <button className="btn btn-secondary btn-sm">Edit</button>
+                  </div>
                 </div>
+                <p>{removeHtmlTags(document.content.substring(3, 170))}</p>
               </li>
             ))}
           </ul>
