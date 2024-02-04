@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "quill/dist/quill.snow.css";
 import Quill from "quill";
-import "firebase/compat/firestore"; 
-import firebase from "firebase/compat/app"; 
-import firebaseConfig from "./firebaseConfig"; 
+import "firebase/compat/firestore";
+import firebase from "firebase/compat/app";
+import firebaseConfig from "./firebaseConfig";
 
 const QuillEditor = () => {
   const editorRef = useRef(null);
@@ -32,27 +32,34 @@ const QuillEditor = () => {
     }
   }, []);
 
-  const saveToFirebase = () => {
+  const saveToFirebase = async () => {
     const content = quillInstance.current?.root.innerHTML;
     const userID = firebase.auth().currentUser.uid;
 
     if (content && documentTitle.trim() !== "") {
       const db = firebase.firestore();
-      const editorContentRef = db.collection("editorContent").doc();
+      const user = firebase.auth().currentUser;
 
-      editorContentRef
-        .set({
-          userID,
-          documentTitle,
-          content,
-        })
-        .then(() => {
-          console.log("Content saved to Firebase successfully");
-          window.location.href = "/home";
-        })
-        .catch((error) => {
-          console.error("Error saving content to Firebase:", error);
-        });
+      if (user) {
+        const displayName = user.displayName || "Anonymous";
+        const currentDate = new Date().toLocaleDateString();
+
+        const editorContentRef = db.collection("editorContent").doc();
+
+        await editorContentRef
+          .set({
+            userID,
+            author: displayName,
+            documentTitle,
+            content,
+            date: currentDate,
+          });
+
+        console.log("Content saved to Firebase successfully");
+        window.location.href = "/home";
+      } else {
+        console.warn("User not logged in. Content not saved.");
+      }
     } else {
       console.warn("Content or document title is empty. Nothing to save.");
     }

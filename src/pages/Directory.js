@@ -29,7 +29,7 @@ const Directory = ({ userID }) => {
     <div>
       <Header />
       <div className="documentList">
-        <h4 style={{marginBottom: "3%", paddingBottom: "black"}}>All Posts</h4>
+        <h4 style={{marginBottom: "2%", paddingBottom: "black"}}>All Posts</h4>
         <ul>
           {documents.map((document) => (
             <div className="post">
@@ -37,7 +37,8 @@ const Directory = ({ userID }) => {
                 <Link to={`/pages/${document.id}`}>
                   {document.documentTitle}
                 </Link>
-                <p>By: Author Name</p>
+                <p>By: {document.author}</p>
+                <p>Posted: {document.date}</p>
               </li>
             </div>
           ))}
