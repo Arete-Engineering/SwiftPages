@@ -5,23 +5,39 @@ import "firebase/compat/firestore";
 
 const DocumentList = ({ userID }) => {
   const [documents, setDocuments] = useState([]);
+  const db = firebase.firestore();
+
+  const fetchDocuments = async () => {
+    const querySnapshot = await db
+      .collection("editorContent")
+      .where("userID", "==", userID)
+      .get();
+
+    const documentsData = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    setDocuments(documentsData);
+  };
+
+  const handleDelete = (documentId) => {
+    const isConfirmed = window.confirm("Are you sure you want to delete this page?");
+    if (isConfirmed) {
+      const documentRef = db.collection("editorContent").doc(documentId);
+
+      documentRef.delete().then(() => {
+        console.log("Document successfully deleted!");
+        fetchDocuments();
+      }).catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+    } else {
+      console.log("Deletion canceled");
+    }
+  };
 
   useEffect(() => {
-    const fetchDocuments = async () => {
-      const db = firebase.firestore();
-      const querySnapshot = await db
-        .collection("editorContent")
-        .where("userID", "==", userID)
-        .get();
-
-      const documentsData = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-
-      setDocuments(documentsData);
-    };
-
     fetchDocuments();
   }, [userID]);
 
@@ -38,12 +54,20 @@ const DocumentList = ({ userID }) => {
                 <Link to={`/pages/${document.id}`}>
                   {document.documentTitle}
                 </Link>
+                <div>
+                  <button
+                    className="btn btn-secondary btn-sm"
+                    onClick={() => handleDelete(document.id)}
+                  >
+                    Delete
+                  </button>
+                  <button className="btn btn-secondary btn-sm">Edit</button>
+                </div>
               </li>
             ))}
           </ul>
         </div>
       )}
-
     </div>
   );
 };

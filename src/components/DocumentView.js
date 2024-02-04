@@ -49,7 +49,7 @@ const DocumentView = () => {
       ) : (
         <p>Loading...</p>
       )}
-      <a style={{ padding: "5%", color: "blue", textDecoration: "underline" }} onClick={handleReturn}>Return</a>
+      <a style={{ padding: "5%", color: "blue", textDecoration: "underline" }} onClick={handleReturn}>Return a page</a>
     </div>
   );
 };
