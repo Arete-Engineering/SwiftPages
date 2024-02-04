@@ -9,6 +9,7 @@ const QuillEditor = () => {
   const editorRef = useRef(null);
   const quillInstance = useRef(null);
   const [documentTitle, setDocumentTitle] = useState("");
+  const [documentSlug, setDocumentSlug] = useState("");
 
   useEffect(() => {
     if (!firebase.apps.length) {
@@ -36,7 +37,7 @@ const QuillEditor = () => {
     const content = quillInstance.current?.root.innerHTML;
     const userID = firebase.auth().currentUser.uid;
 
-    if (content && documentTitle.trim() !== "") {
+    if (content && documentTitle.trim() && documentSlug !== "") {
       const db = firebase.firestore();
       const user = firebase.auth().currentUser;
 
@@ -51,6 +52,7 @@ const QuillEditor = () => {
             userID,
             author: displayName,
             documentTitle,
+            documentSlug,
             content,
             date: currentDate,
           });
@@ -62,7 +64,7 @@ const QuillEditor = () => {
       }
     } else {
       console.warn("Content or document title is empty. Nothing to save.");
-      window.confirm("Content or document title is empty. Please provide a title and content for your page.");
+      window.confirm("Content or document title is empty. Please provide a title, URL slug, and content for your page.");
     }
   };
 
@@ -75,6 +77,14 @@ const QuillEditor = () => {
         aria-label="Document Title"
         value={documentTitle}
         onChange={(e) => setDocumentTitle(e.target.value)}
+      />
+      <input
+        type="text"
+        className="form-control"
+        placeholder="Slug-URL   (ex. how-to-cook-pasta)"
+        aria-label="Slug (URL)"
+        value={documentSlug}
+        onChange={(e) => setDocumentSlug(e.target.value)}
       />
       <div ref={editorRef} />
       <button
