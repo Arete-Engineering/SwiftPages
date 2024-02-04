@@ -35,7 +35,7 @@ const DocumentList = ({ userID }) => {
           <ul>
             {documents.map((document) => (
               <li key={document.id}>
-                <Link to={`/document/${document.id}`}>
+                <Link to={`/pages/${document.id}`}>
                   {document.documentTitle}
                 </Link>
               </li>
