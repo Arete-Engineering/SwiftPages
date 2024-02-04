@@ -62,7 +62,7 @@ const QuillEditor = () => {
       }
     } else {
       console.warn("Content or document title is empty. Nothing to save.");
-      
+      window.confirm("Content or document title is empty. Please provide a title and content for your page.");
     }
   };
 
