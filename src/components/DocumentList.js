@@ -37,6 +37,10 @@ const DocumentList = ({ userID }) => {
     }
   };
 
+  const removeHtmlTags = (str) => {
+    return str.replace(/<[^>]*>?/gm, "");
+  };
+
   useEffect(() => {
     fetchDocuments();
   }, [userID]);
@@ -54,7 +58,7 @@ const DocumentList = ({ userID }) => {
                 <Link to={`/pages/${document.id}`}>
                   {document.documentTitle}
                 </Link>
-                <p>{document.content.substring(3, 170)}</p>
+                <p>{removeHtmlTags(document.content.substring(3, 170))}</p>
                 <div>
                   <button
                     className="btn btn-secondary btn-sm"

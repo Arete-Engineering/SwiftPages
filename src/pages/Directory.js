@@ -7,6 +7,10 @@ import Header from "../components/Header";
 const Directory = ({ userID }) => {
   const [documents, setDocuments] = useState([]);
 
+  const removeHtmlTags = (str) => {
+    return str.replace(/<[^>]*>?/gm, "");
+  };
+
   useEffect(() => {
     const fetchDocuments = async () => {
       const db = firebase.firestore();
@@ -29,16 +33,16 @@ const Directory = ({ userID }) => {
     <div>
       <Header />
       <div className="documentList">
-        <h4 style={{marginBottom: "2%", paddingBottom: "black"}}>All Posts</h4>
+        <h4 style={{marginBottom: "4%", paddingBottom: "black"}}>Community Pages 🌎</h4>
         <ul>
           {documents.map((document) => (
             <div className="post">
               <li key={document.id}>
                 <Link to={`/pages/${document.id}`}>
-                  {document.documentTitle}
+                  <strong style={{color: "#0064e0", textDecoration: "underline"}}>{document.documentTitle}</strong>
                 </Link>
-                <p>By: {document.author}</p>
-                <p>Posted: {document.date}</p>
+                <p>{removeHtmlTags(document.content.substring(3, 170))}</p>
+                <p>{document.author}<div style={{color: "#6b6b6b"}}>{document.date}</div></p>
               </li>
             </div>
           ))}
