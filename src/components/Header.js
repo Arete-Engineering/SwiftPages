@@ -51,10 +51,10 @@ export default function Header() {
           <a href="/community" className="menuItem">Explore</a>
         </li>
         <li>
-          <a href="/pages" className="menuItem">My Pages</a>
+          <a href="/editor" className="menuItem">Create</a>
         </li>
         <li>
-          <a href="/editor" className="menuItem">Create</a>
+          <a href="/pages" className="menuItem">My Pages</a>
         </li>
         <li>
           <a href={`/profile/${userID}`} className="menuItem">
@@ -78,8 +78,7 @@ function SignOut() {
     <button
       onClick={() => auth.signOut()}
       type="button"
-      className="btn btn-light btn-sm"
-      style={{ backgroundColor: "#0064e0", color: "white" }}
+      className="btn btn-dark btn-sm"
     >
       Sign-Out
     </button>

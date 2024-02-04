@@ -8,6 +8,9 @@ export default function UpperDashboard() {
 
   return (
     <>
+      <div class="alert alert-primary" role="alert">
+        SwiftPages is still in early development, everything is subject to change.
+      </div>
       <h4 className="welcome">Welcome back, {userName}</h4>
       {userID && <DocumentList userID={userID} />}
     </>
