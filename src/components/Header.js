@@ -54,9 +54,6 @@ export default function Header() {
           <a href="/editor" className="menuItem">Create</a>
         </li>
         <li>
-          <a href="/pages" className="menuItem">My Pages</a>
-        </li>
-        <li>
           <a href={`/profile/${userID}`} className="menuItem">
             Profile
           </a>

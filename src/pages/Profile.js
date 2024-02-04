@@ -4,6 +4,7 @@ import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import DocumentList from "../components/DocumentList";
+import Footer from "../components/Footer";
 
 //Firebase config
 firebase.initializeApp({
@@ -29,6 +30,7 @@ export default function Profile() {
             <h2>{username}</h2>
             <p>Some random and not-so-stupid bio.</p>
             {userID && <DocumentList userID={userID} />}
+            <Footer />
         </>
     )
 }
