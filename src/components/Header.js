@@ -48,16 +48,16 @@ export default function Header() {
           ></input>
         </li> */}
         <li>
-          <a href="/community">Community</a>
+          <a href="/community" className="menuItem">Community</a>
         </li>
         <li>
-          <a href="/editor">Write</a>
+          <a href="/editor" className="menuItem">Create</a>
         </li>
         <li>
-          <a href="/pages">Pages</a>
+          <a href="/pages" className="menuItem">Pages</a>
         </li>
         <li>
-          <a href={`/profile/${userID}`}>
+          <a href={`/profile/${userID}`} className="menuItem">
             <img
               src={profile_picture}
               alt="ProfilePicture"
