@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import UpperDashboard from "../components/UpperDashboard";
+import Explore from "../components/Explore";
 
 export default function Home({ user }) {
   return (
@@ -14,6 +15,7 @@ export default function Home({ user }) {
           Create New Page
         </a>
       </div>
+      <Explore />
     </>
   );
 }
