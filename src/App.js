@@ -9,6 +9,7 @@ import Document from "./pages/Document";
 import Journal from "./pages/Journal";
 import DocumentView from "./components/DocumentView";
 import Directory from "./pages/Directory";
+import Profile from "./pages/Profile";
 
 // Firebase Import
 import firebase from "firebase/compat/app";
@@ -46,7 +47,7 @@ export default function App() {
               element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
             />
             <Route
-              path="/Document/*"
+              path="/document/*"
               element={
                 user !== null ? (
                   <Routes>
@@ -61,6 +62,23 @@ export default function App() {
             <Route
               path="/journal"
               element={user !== null ? <Journal /> : <Navigate to="/sign-in" />}
+            />
+            <Route
+              path="/profile/*"
+              element={
+                user !== null ? (
+                  <Routes>
+                    <Route path="/" element={<Profile />} />
+                    <Route path=":id" element={<Profile />} />
+                  </Routes>
+                ) : (
+                  <Navigate to="/sign-in" />
+                )
+              }
+            />
+            <Route
+              path="/profile"
+              element={user !== null ? <Profile /> : <Navigate to="/sign-in" />}
             />
             <Route
               path="/directory"

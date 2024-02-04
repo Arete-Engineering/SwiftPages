@@ -23,6 +23,7 @@ let project_name = "SwiftPages";
 export default function Header() {
   const [user] = useAuthState(auth);
   const profile_picture = user ? user.photoURL : "Profile Picture Null";
+  const userID = user ? user.uid : null;
 
   return (
     <header className="App_header" style={{ backgroundColor: "#FFFFFF" }}>
@@ -38,14 +39,14 @@ export default function Header() {
             {project_name}
           </a>
         </li>
-        <li>
+        {/* <li>
           <input
             className="form-control form-control-sm"
             type="text"
             placeholder="Search"
             aria-label=".form-control-sm example"
           ></input>
-        </li>
+        </li> */}
         <li>
           <a href="/directory">Directory</a>
         </li>
@@ -56,11 +57,13 @@ export default function Header() {
           <a href="/document">Documents</a>
         </li>
         <li>
-          <img
-            src={profile_picture}
-            alt="ProfilePicture"
-            className="profile_picture"
-          />
+          <a href={`/profile/${userID}`}>
+            <img
+              src={profile_picture}
+              alt="ProfilePicture"
+              className="profile_picture"
+            />
+          </a>
         </li>
         <li>
           <SignOut />
