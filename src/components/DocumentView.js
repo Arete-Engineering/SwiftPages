@@ -6,7 +6,7 @@ import "firebase/compat/firestore";
 const DocumentView = () => {
   const { id } = useParams();
   const [documentData, setDocumentData] = useState(null);
-  const navigate  = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDocument = async () => {
@@ -28,24 +28,28 @@ const DocumentView = () => {
   }, [id]);
 
   const handleReturn = () => {
-    navigate(-1);
+    if (navigate(-1)) {
+      navigate(-1);
+    } else {
+      navigate("/home");
+    }
   }
 
   return (
     <div>
       {documentData ? (
         <>
-          <h1 style={{marginTop: "30px"}}>{documentData.documentTitle}</h1>
+          <h1 style={{ marginTop: "30px" }}>{documentData.documentTitle}</h1>
           <div
             className="documentView"
-            style={{marginRight: "10%", marginLeft: "10%"}}
+            style={{ marginRight: "10%", marginLeft: "10%" }}
             dangerouslySetInnerHTML={{ __html: documentData.content }}
           />
         </>
       ) : (
         <p>Loading...</p>
       )}
-      <a style={{padding: "5%", color: "blue", textDecoration: "underline"}} onClick={handleReturn}>Return a page</a>
+      <a style={{ padding: "5%", color: "blue", textDecoration: "underline" }} onClick={handleReturn}>Return</a>
     </div>
   );
 };

@@ -49,13 +49,11 @@ export default function App() {
             <Route
               path="/pages/*"
               element={
-                user !== null ? (
+                (
                   <Routes>
                     <Route path="/" element={<Document />} />
                     <Route path=":id" element={<DocumentView />} />
                   </Routes>
-                ) : (
-                  <Navigate to="/sign-in" />
                 )
               }
             />
