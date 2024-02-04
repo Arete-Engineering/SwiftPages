@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 
 const DocumentView = () => {
   const { id } = useParams();
   const [documentData, setDocumentData] = useState(null);
+  const navigate  = useNavigate();
 
   useEffect(() => {
     const fetchDocument = async () => {
@@ -26,6 +27,10 @@ const DocumentView = () => {
     fetchDocument();
   }, [id]);
 
+  const handleReturn = () => {
+    navigate(-1);
+  }
+
   return (
     <div>
       {documentData ? (
@@ -40,7 +45,7 @@ const DocumentView = () => {
       ) : (
         <p>Loading...</p>
       )}
-      <a style={{padding: "5%"}} href="/home">Return Home</a>
+      <a style={{padding: "5%", color: "blue", textDecoration: "underline"}} onClick={handleReturn}>Return a page</a>
     </div>
   );
 };

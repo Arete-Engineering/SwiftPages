@@ -47,7 +47,7 @@ export default function App() {
               element={user !== null ? <Home /> : <Navigate to="/sign-in" />}
             />
             <Route
-              path="/document/*"
+              path="/pages/*"
               element={
                 user !== null ? (
                   <Routes>
@@ -81,7 +81,7 @@ export default function App() {
               element={user !== null ? <Profile /> : <Navigate to="/sign-in" />}
             />
             <Route
-              path="/directory"
+              path="/community"
               element={user !== null ? <Directory /> : <Navigate to="/sign-in" />}
             />
             <Route

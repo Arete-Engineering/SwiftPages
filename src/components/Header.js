@@ -48,13 +48,13 @@ export default function Header() {
           ></input>
         </li> */}
         <li>
-          <a href="/directory">Directory</a>
+          <a href="/community">Community</a>
         </li>
         <li>
           <a href="/editor">Write</a>
         </li>
         <li>
-          <a href="/document">Documents</a>
+          <a href="/pages">Pages</a>
         </li>
         <li>
           <a href={`/profile/${userID}`}>
