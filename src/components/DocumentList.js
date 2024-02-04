@@ -47,13 +47,14 @@ const DocumentList = ({ userID }) => {
         <p>No documents found. Start writing.</p>
       ) : (
         <div className="documentList">
-          <h4>Your Documents:</h4>
+          <h4>Created Pages</h4>
           <ul>
             {documents.map((document) => (
-              <li key={document.id}>
+              <li key={document.id} style={{marginBottom: "4%"}}>
                 <Link to={`/pages/${document.id}`}>
                   {document.documentTitle}
                 </Link>
+                <p>{document.content.substring(3, 170)}</p>
                 <div>
                   <button
                     className="btn btn-secondary btn-sm"
