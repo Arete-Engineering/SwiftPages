@@ -39,10 +39,10 @@ const DocumentView = () => {
     <div>
       {documentData ? (
         <>
-          <h1 style={{ marginTop: "30px" }}>{documentData.documentTitle}</h1>
+          <h1 style={{ marginTop: "30px", fontWeight: "bold"}}>{documentData.documentTitle}</h1>
           <div
             className="documentView"
-            style={{ marginRight: "10%", marginLeft: "10%" }}
+            style={{ marginRight: "9%", marginLeft: "9%" }}
             dangerouslySetInnerHTML={{ __html: documentData.content }}
           />
         </>

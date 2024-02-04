@@ -9,7 +9,7 @@ const QuillEditor = () => {
   const editorRef = useRef(null);
   const quillInstance = useRef(null);
   const [documentTitle, setDocumentTitle] = useState("");
-  const [documentSlug, setDocumentSlug] = useState("");
+  // const [documentSlug, setDocumentSlug] = useState("");
 
   useEffect(() => {
     if (!firebase.apps.length) {
@@ -30,6 +30,21 @@ const QuillEditor = () => {
           ],
         },
       });
+
+      // Set placeholder text
+      quillInstance.current.clipboard.dangerouslyPasteHTML(
+        0,
+          "<h2>Begin your post...</h2>"
+      );
+
+      // Handle focus event to remove placeholder
+      quillInstance.current.on("text-change", () => {
+        const placeholder = editorRef.current.querySelector(".ql-placeholder");
+        if (placeholder) {
+          placeholder.style.display =
+            quillInstance.current.getLength() > 1 ? "none" : "block";
+        }
+      });
     }
   }, []);
 
@@ -37,7 +52,7 @@ const QuillEditor = () => {
     const content = quillInstance.current?.root.innerHTML;
     const userID = firebase.auth().currentUser.uid;
 
-    if (content && documentTitle.trim() && documentSlug !== "") {
+    if (content && documentTitle.trim() !== "") {
       const db = firebase.firestore();
       const user = firebase.auth().currentUser;
 
@@ -47,15 +62,14 @@ const QuillEditor = () => {
 
         const editorContentRef = db.collection("editorContent").doc();
 
-        await editorContentRef
-          .set({
-            userID,
-            author: displayName,
-            documentTitle,
-            documentSlug,
-            content,
-            date: currentDate,
-          });
+        await editorContentRef.set({
+          userID,
+          author: displayName,
+          documentTitle,
+          // documentSlug,
+          content,
+          date: currentDate,
+        });
 
         console.log("Content saved to Firebase successfully");
         window.location.href = "/home";
@@ -64,43 +78,44 @@ const QuillEditor = () => {
       }
     } else {
       console.warn("Content or document title is empty. Nothing to save.");
-      window.confirm("Content or document title is empty. Please provide a title, URL slug, and content for your page.");
+      window.confirm(
+        "Content or document title is empty. Please provide a title, URL slug, and content for your page."
+      );
     }
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Document Title"
-        aria-label="Document Title"
-        value={documentTitle}
-        onChange={(e) => setDocumentTitle(e.target.value)}
+    <div div style={{ maxWidth: "1250px", margin: "auto", padding: "20px" }}>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Document Title"
+          aria-label="Document Title"
+          value={documentTitle}
+          onChange={(e) => setDocumentTitle(e.target.value)}
+        />
+        <button
+          class="btn btn-dark"
+          type="button"
+          id="button-addon2"
+          onClick={saveToFirebase}
+        >
+          Post Page
+        </button>
+        <a class="btn btn-danger" type="button" id="button-addon2" href="/home">
+          Cancel
+        </a>
+      </div>
+      <div
+        ref={editorRef}
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "1px solid #ccc",
+          borderRadius: "5px",
+        }}
       />
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Slug-URL   (ex. how-to-cook-pasta)"
-        aria-label="Slug (URL)"
-        value={documentSlug}
-        onChange={(e) => setDocumentSlug(e.target.value)}
-      />
-      <div ref={editorRef} />
-      <button
-        className="btn btn-light btn-sm"
-        style={{ marginTop: "2%", backgroundColor: "#0064e0", color: "white" }}
-        onClick={saveToFirebase}
-      >
-        Save to Firebase
-      </button>
-      <a
-        className="btn btn-light btn-sm"
-        style={{ marginTop: "2%", backgroundColor: "#0064e0", color: "white" }}
-        href="/home"
-      >
-        Go Home
-      </a>
     </div>
   );
 };
