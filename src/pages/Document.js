@@ -4,6 +4,7 @@ import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import Header from "../components/Header";
 import DocumentList from "../components/DocumentList";
+import Footer from "../components/Footer";
 
 export default function Document() {
   const userID = firebase.auth().currentUser?.uid;
@@ -12,6 +13,7 @@ export default function Document() {
     <>
       <Header />
       {userID && <DocumentList userID={userID} />}
+      <Footer />
     </>
   );
 }
