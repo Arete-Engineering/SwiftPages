@@ -51,10 +51,10 @@ export default function Header() {
           <a href="/community" className="menuItem">Explore</a>
         </li>
         <li>
-          <a href="/pages" className="menuItem">Pages Created</a>
+          <a href="/pages" className="menuItem">My Pages</a>
         </li>
         <li>
-          <a href="/editor" className="menuItem">Create Page</a>
+          <a href="/editor" className="menuItem">Create</a>
         </li>
         <li>
           <a href={`/profile/${userID}`} className="menuItem">
