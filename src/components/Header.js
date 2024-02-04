@@ -58,11 +58,7 @@ export default function Header() {
         </li>
         <li>
           <a href={`/profile/${userID}`} className="menuItem">
-            <img
-              src={profile_picture}
-              alt="ProfilePicture"
-              className="profile_picture"
-            />
+            Profile
           </a>
         </li>
         <li>
