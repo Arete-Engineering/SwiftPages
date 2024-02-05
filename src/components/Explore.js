@@ -37,10 +37,10 @@ const Explore = ({ userID }) => {
             <div className="post">
               <li key={document.id}>
                 <Link to={`/pages/${document.id}`}>
-                  <strong style={{color: "#0064e0", textDecoration: "underline"}}>{document.documentTitle}</strong>
+                  <strong style={{color: "#223037", textDecoration: "none"}}>{document.documentTitle}</strong>
                 </Link>
-                <p>{removeHtmlTags(document.content.substring(3, 170))}</p>
-                <p>{document.author}<div style={{color: "#6b6b6b"}}>{document.date}</div></p>
+                <p style={{color: "#6b6b6b"}}>{removeHtmlTags(document.content.substring(3, 170))}</p>
+                <p>{document.author}<div style={{color: "#98a1b2"}}>{document.date}</div></p>
               </li>
             </div>
           ))}
