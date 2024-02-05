@@ -33,23 +33,41 @@ const DocumentView = () => {
     } else {
       navigate("/home");
     }
-  }
+  };
 
   return (
     <div>
       {documentData ? (
         <>
-          <h1 style={{ marginTop: "30px", fontWeight: "bold"}}>{documentData.documentTitle}</h1>
+          <h1 style={{ marginTop: "30px", fontWeight: "bold" }}>
+            {documentData.documentTitle}
+          </h1>
           <div
             className="documentView"
-            style={{ marginRight: "9%", marginLeft: "9%" }}
+            style={{ maxWidth: "800px", margin: "auto", padding: "20px" }}
             dangerouslySetInnerHTML={{ __html: documentData.content }}
           />
         </>
       ) : (
         <p>Loading...</p>
       )}
-      <a style={{ padding: "5%", color: "blue", textDecoration: "underline" }} onClick={handleReturn}>Return a page</a>
+      <a
+        style={{ padding: "5%", color: "blue", textDecoration: "underline" }}
+        onClick={handleReturn}
+      >
+        Return a page
+      </a>
+
+      <style>
+        {`
+          @media (max-width: 600px) {
+            .documentView img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };
