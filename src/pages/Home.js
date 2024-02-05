@@ -8,14 +8,6 @@ export default function Home({ user }) {
     <>
       <Header />
       <UpperDashboard />
-      <div>
-        <a
-          className="btn btn-dark btn-sm"
-          href="/editor"
-        >
-          Create New Page
-        </a>
-      </div>
       <Explore />
       <Footer />
     </>

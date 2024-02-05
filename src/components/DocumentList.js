@@ -56,7 +56,7 @@ const DocumentList = ({ userID }) => {
         <p>No documents found. Start writing.</p>
       ) : (
         <div className="documentList">
-          <h4>Created Pages</h4>
+          <h4>Your Pages</h4>
           <ul className="post">
             {documents.map((document) => (
               <li key={document.id} style={{ marginBottom: "4%" }}>
@@ -69,7 +69,7 @@ const DocumentList = ({ userID }) => {
                 >
                   <Link to={`/pages/${document.id}`}>
                     <strong
-                      style={{ color: "#0064e0", textDecoration: "underline" }}
+                      style={{ fontSize: "20px", fontWeight: "normal", color: "#0064e0", textDecoration: "underline" }}
                     >
                       {document.documentTitle}
                     </strong>

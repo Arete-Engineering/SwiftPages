@@ -34,7 +34,7 @@ const QuillEditor = () => {
       // Set placeholder text
       quillInstance.current.clipboard.dangerouslyPasteHTML(
         0,
-          "<h2>Begin your post...</h2>"
+        "<h3>Write here...</h3>"
       );
 
       // Handle focus event to remove placeholder
@@ -86,7 +86,10 @@ const QuillEditor = () => {
 
   return (
     <div div style={{ maxWidth: "1250px", margin: "auto", padding: "20px" }}>
-      <div class="input-group mb-3">
+      <div class="input-group mb-3" style={{maxWidth: "100%"}}>
+        <a class="btn btn-dark" type="button" id="button-addon2" href="/home">
+          ↩
+        </a>
         <input
           type="text"
           className="form-control"
@@ -96,16 +99,13 @@ const QuillEditor = () => {
           onChange={(e) => setDocumentTitle(e.target.value)}
         />
         <button
-          class="btn btn-dark"
+          class="btn btn-primary"
           type="button"
           id="button-addon2"
           onClick={saveToFirebase}
         >
-          Post Page
+          Publish
         </button>
-        <a class="btn btn-danger" type="button" id="button-addon2" href="/home">
-          Cancel
-        </a>
       </div>
       <div
         ref={editorRef}
