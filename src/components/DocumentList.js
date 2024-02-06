@@ -53,7 +53,7 @@ const DocumentList = ({ userID }) => {
   return (
     <div>
       {documents.length === 0 ? (
-        <p>No documents found. Start writing.</p>
+        <p>No documents found. <a href="/editor">Start writing.</a></p>
       ) : (
         <div className="documentList">
           <h4>Your Pages</h4>
