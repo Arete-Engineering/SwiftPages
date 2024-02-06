@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 const auth = firebase.auth();
 
-let project_name = "Welcome to SwiftPages";
+let project_name = "Welcome to WikiWrites";
 let tagline = "The platform built for dreamers.";
 
 export default function SignIn() {

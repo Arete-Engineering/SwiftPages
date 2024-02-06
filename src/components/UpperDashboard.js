@@ -13,7 +13,7 @@ export default function UpperDashboard() {
         role="alert"
         style={{ borderRadius: "0px" }}
       >
-        SwiftPages is still in early development, everything is subject to
+        WikiWrites is still in early development, everything is subject to
         change. 🙃
       </div>
       <h4 className="welcome" style={{ display: "flex", alignItems: "center" }}>

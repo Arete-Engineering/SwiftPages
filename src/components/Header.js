@@ -18,7 +18,7 @@ firebase.initializeApp({
 
 const auth = firebase.auth();
 
-let project_name = "SwiftPages";
+let project_name = "WikiWrites";
 
 export default function Header() {
   const [user] = useAuthState(auth);
@@ -26,7 +26,7 @@ export default function Header() {
   const userID = user ? user.uid : null;
 
   return (
-    <header className="App_header" style={{ backgroundColor: "#FFFFFF" }}>
+    <header className="App_header" style={{ backgroundColor: "#f8f7f4" }}>
       <ul>
         <li>
           <a
@@ -39,19 +39,15 @@ export default function Header() {
             {project_name}
           </a>
         </li>
-        {/* <li>
-          <input
-            className="form-control form-control-sm"
-            type="text"
-            placeholder="Search"
-            aria-label=".form-control-sm example"
-          ></input>
-        </li> */}
         <li>
-          <a href="/community" className="menuItem">Explore</a>
+          <a href="/community" className="menuItem">
+            Explore
+          </a>
         </li>
         <li>
-          <a href="/editor" className="menuItem">Create</a>
+          <a href="/editor" className="menuItem">
+            Create
+          </a>
         </li>
         <li>
           <a href={`/profile/${userID}`} className="menuItem">
@@ -59,21 +55,15 @@ export default function Header() {
           </a>
         </li>
         <li>
-          <SignOut />
+          <button
+            onClick={() => auth.signOut()}
+            type="button"
+            className="btn btn-dark btn-sm"
+          >
+            Sign-Out
+          </button>
         </li>
       </ul>
     </header>
-  );
-}
-
-function SignOut() {
-  return (
-    <button
-      onClick={() => auth.signOut()}
-      type="button"
-      className="btn btn-dark btn-sm"
-    >
-      Sign-Out
-    </button>
   );
 }

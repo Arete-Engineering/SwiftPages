@@ -68,7 +68,8 @@
 
 .App_header a {
   text-decoration: none;
-  color: #364c57;
+  color: #0d0c22;
+  font-weight: 600;
   font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
 }
