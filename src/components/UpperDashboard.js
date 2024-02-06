@@ -13,7 +13,7 @@ export default function UpperDashboard() {
         role="alert"
         style={{ borderRadius: "0px" }}
       >
-        WikiWrites is still in early development, everything is subject to
+        SwiftPages is still in early development, everything is subject to
         change. 🙃
       </div>
       <h4 className="welcome" style={{ display: "flex", alignItems: "center" }}>
@@ -21,7 +21,7 @@ export default function UpperDashboard() {
         {/* <div style={{ marginLeft: "auto", marginBottom: "5%" }}>
           <a className="btn btn-secondary btn-sm" href="/editor">
             Create New Page
-          </a>
+          </a>SwiftPages
         </div> */}
       </h4>
       {userID && <DocumentList userID={userID} />}
