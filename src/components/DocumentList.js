@@ -56,7 +56,7 @@ const DocumentList = ({ userID }) => {
         <p>No documents found. <a href="/editor">Start writing.</a></p>
       ) : (
         <div className="documentList">
-          <h4>Your Pages</h4>
+          <h4 style={{fontSize: "18px"}}>Your Pages</h4>
           <ul className="post">
             {documents.map((document) => (
               <li key={document.id} style={{ marginBottom: "4%" }}>
