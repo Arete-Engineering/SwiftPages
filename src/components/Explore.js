@@ -13,9 +13,7 @@ const Explore = ({ userID }) => {
   useEffect(() => {
     const fetchDocuments = async () => {
       const db = firebase.firestore();
-      const querySnapshot = await db
-        .collection("editorContent")
-        .get();
+      const querySnapshot = await db.collection("editorContent").get();
 
       const documentsData = querySnapshot.docs.map((doc) => ({
         id: doc.id,
@@ -31,16 +29,26 @@ const Explore = ({ userID }) => {
   return (
     <div>
       <div className="documentList">
-        <h4 style={{marginBottom: "4%", paddingBottom: "black"}}>Community Pages 🌎</h4>
+        <h4 style={{ marginBottom: "4%", paddingBottom: "black" }}>
+          Community Pages 🌎
+        </h4>
         <ul>
           {documents.map((document) => (
             <div className="post">
               <li key={document.id}>
-                <Link to={`/pages/${document.id}`}>
-                  <strong style={{color: "#223037", textDecoration: "none"}}>{document.documentTitle}</strong>
+                <Link
+                  to={`/pages/${document.id}`}
+                  style={{ textDecoration: "underline", color: "#223037" }}
+                >
+                  <strong>{document.documentTitle}</strong>
                 </Link>
-                <p style={{color: "#6b6b6b"}}>{removeHtmlTags(document.content.substring(3, 170))}</p>
-                <p>{document.author}<div style={{color: "#98a1b2"}}>{document.date}</div></p>
+                <p style={{ color: "#6b6b6b" }}>
+                  {removeHtmlTags(document.content.substring(3, 170))}
+                </p>
+                <p>
+                  {document.author}
+                  <div style={{ color: "#98a1b2" }}>{document.date}</div>
+                </p>
               </li>
             </div>
           ))}

@@ -15,8 +15,11 @@
   border-radius: 5px;
   display: block;
   text-align: left;
+  padding: 15px;
   font-size: 18px;
-  border-bottom: #333 30px;
+  border-bottom: #cdd1da solid 1px;
+  /* border-top: #cdd1da solid 1px; */
+  /* margin-bottom: 2%; */
   font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
 }

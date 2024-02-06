@@ -18,11 +18,11 @@ export default function UpperDashboard() {
       </div>
       <h4 className="welcome" style={{ display: "flex", alignItems: "center" }}>
         Welcome, {userName}.
-        <div style={{ marginLeft: "auto", marginBottom: "5%" }}>
+        {/* <div style={{ marginLeft: "auto", marginBottom: "5%" }}>
           <a className="btn btn-secondary btn-sm" href="/editor">
             Create New Page
           </a>
-        </div>
+        </div> */}
       </h4>
       {userID && <DocumentList userID={userID} />}
     </div>
