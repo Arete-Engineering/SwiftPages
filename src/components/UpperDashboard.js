@@ -9,14 +9,14 @@ export default function UpperDashboard() {
 
   return (
     <div style={{ borderBottom: "1px solid #cdd1da", minHeight: "20px" }}>
-      <div
+      {/* <div
         class="alert alert-light"
         role="alert"
         style={{ borderRadius: "0px" }}
       >
         SwiftPages is still in early development, everything is subject to
         change. 🙃
-      </div>
+      </div> */}
       <h4 className="welcome" style={{ display: "flex", alignItems: "center" }}>
       <img src={pfp} style={{borderRadius: "100%", width: "3em", height: "3em", marginRight: "1em", verticalAlign: "middle"}}/> Welcome, {userName}.
         {/* <div style={{ marginLeft: "auto", marginBottom: "5%" }}>

@@ -30,6 +30,13 @@ export default function Profile() {
             <h2>{username}</h2>
             <p>Some random and not-so-stupid bio.</p>
             {userID && <DocumentList userID={userID} />}
+            <button
+                onClick={() => auth.signOut()}
+                type="button"
+                className="btn btn-dark btn-sm"
+            >
+                Sign-Out
+            </button>
             <Footer />
         </>
     )

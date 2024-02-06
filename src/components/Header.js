@@ -4,6 +4,7 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useState } from 'react';
 
 //Firebase config
 firebase.initializeApp({
@@ -24,36 +25,43 @@ export default function Header() {
   const [user] = useAuthState(auth);
   const profile_picture = user ? user.photoURL : "Profile Picture Null";
   const userID = user ? user.uid : null;
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+
 
   return (
-    <header className="App_header" style={{ backgroundColor: "#f8f7f4" }}>
-      <ul>
-        <li>
-          <a
-            href="/home"
-            style={{
-              fontWeight: "bold",
-              color: "#223037",
-            }}
-          >
-            {project_name}
-          </a>
-        </li>
-        <li>
-          <a href="/community" className="menuItem">
-            Explore
-          </a>
-        </li>
-        <li>
-          <a href="/editor" className="menuItem">
-            Create
-          </a>
-        </li>
-        <li>
-          <a href={`/profile/${userID}`} className="menuItem">
-            Profile
-          </a>
-        </li>
+
+    <header className="App_header" style={{ backgroundColor: "white" }}>
+      <nav className="navbar navbar-expand-lg navbar-light bg-white">
+        <img src="https://cdn.discordapp.com/attachments/955231523488038952/1204509299892682792/Eunoia14.png?ex=65d4fdb3&is=65c288b3&hm=b8d45f0f7f1d67b0448fa37eab7047e697e4f08ddbac3c4fb94ac4d3d3f10cd9&" width="30" height="30" className="d-inline-block align-top" alt="" />
+        <a className="navbar-brand" href="/home">{project_name}</a>
+        <button 
+          className="navbar-toggler" 
+          type="button" 
+          onClick={handleNavCollapse} 
+          aria-expanded={!isNavCollapsed ? true : false}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className={`${isNavCollapsed ? 'collapse' : ''} navbar-collapse`} id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item active">
+              <a className="nav-link" href="/home">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/community">Explore</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href={`/profile/${userID}`}>Profile</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/editor">Create</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      {/* <ul>
         <li>
           <button
             onClick={() => auth.signOut()}
@@ -63,7 +71,7 @@ export default function Header() {
             Sign-Out
           </button>
         </li>
-      </ul>
+      </ul> */}
     </header>
   );
 }
