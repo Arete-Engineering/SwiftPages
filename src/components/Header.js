@@ -61,17 +61,6 @@ export default function Header() {
           </ul>
         </div>
       </nav>
-      {/* <ul>
-        <li>
-          <button
-            onClick={() => auth.signOut()}
-            type="button"
-            className="btn btn-dark btn-sm"
-          >
-            Sign-Out
-          </button>
-        </li>
-      </ul> */}
     </header>
   );
 }

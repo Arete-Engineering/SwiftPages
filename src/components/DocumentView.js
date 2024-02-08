@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
+import Header from "./Header";
 
 const DocumentView = () => {
   const { id } = useParams();
@@ -36,26 +37,25 @@ const DocumentView = () => {
   };
 
   return (
-    <div>
+    <><Header /><div style={{ fontFamily: "Arial, sans-serif", color: "#121212" }}>
       {documentData ? (
         <>
-          <h1 style={{ marginTop: "30px", fontWeight: "bold" }}>
+          <h1 style={{ marginTop: "30px", fontWeight: "bold", fontSize: "2.5rem" }}>
             {documentData.documentTitle}
           </h1>
           <div
             className="documentView"
-            style={{ maxWidth: "800px", margin: "auto", padding: "20px" }}
-            dangerouslySetInnerHTML={{ __html: documentData.content }}
-          />
+            style={{ maxWidth: "800px", margin: "auto", padding: "20px", lineHeight: "1.6" }}
+            dangerouslySetInnerHTML={{ __html: documentData.content }} />
         </>
       ) : (
         <p>Loading...</p>
       )}
       <a
-        style={{ padding: "5%", color: "blue", textDecoration: "underline" }}
+        style={{ padding: "5%", color: "blue", textDecoration: "underline", display: "block", textAlign: "center" }}
         onClick={handleReturn}
       >
-        Return a page
+        Return to Home
       </a>
 
       <style>
@@ -68,7 +68,7 @@ const DocumentView = () => {
           }
         `}
       </style>
-    </div>
+    </div></>
   );
 };
 
