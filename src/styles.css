@@ -70,10 +70,10 @@
 
 /* PROFILE PICTURE */
 .profile_picture {
-  border-radius: 50%;
-  max-width: 50px;
-  max-height: 10%;
+  border-radius: 8%;
+  max-height: 20%;
   padding: 1px;
+  margin: 1.5%;
 }
 
 /* SIGN-IN */

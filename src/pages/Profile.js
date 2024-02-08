@@ -26,10 +26,9 @@ export default function Profile() {
     return (
         <>
             <Header />
-            <img src={profile_picture} alt="Profile Picture" />
+            <img src={profile_picture} alt="Profile Picture" className="profile_picture"/>
             <h2>{username}</h2>
             <p>Some random and not-so-stupid bio.</p>
-            {userID && <DocumentList userID={userID} />}
             <button
                 onClick={() => auth.signOut()}
                 type="button"
@@ -37,6 +36,7 @@ export default function Profile() {
             >
                 Sign-Out
             </button>
+            {userID && <DocumentList userID={userID} />}
             <Footer />
         </>
     )
