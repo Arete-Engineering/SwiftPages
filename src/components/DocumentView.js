@@ -57,17 +57,6 @@ const DocumentView = () => {
       >
         Return to Home
       </a>
-
-      <style>
-        {`
-          @media (max-width: 600px) {
-            .documentView img {
-              max-width: 100%;
-              height: auto;
-            }
-          }
-        `}
-      </style>
     </div></>
   );
 };

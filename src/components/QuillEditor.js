@@ -33,8 +33,8 @@ const QuillEditor = ({ content }) => {
 
       // Set placeholder text
       quillInstance.current.clipboard.dangerouslyPasteHTML(
-        0,
-        "<h3>${content}</h3>"
+        1,
+        "<h3>Start Writing...</h3>"
       );
 
       // Handle focus event to remove placeholder
