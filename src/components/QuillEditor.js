@@ -5,7 +5,7 @@ import "firebase/compat/firestore";
 import firebase from "firebase/compat/app";
 import firebaseConfig from "./firebaseConfig";
 
-const QuillEditor = () => {
+const QuillEditor = ({ content }) => {
   const editorRef = useRef(null);
   const quillInstance = useRef(null);
   const [documentTitle, setDocumentTitle] = useState("");
@@ -34,7 +34,7 @@ const QuillEditor = () => {
       // Set placeholder text
       quillInstance.current.clipboard.dangerouslyPasteHTML(
         0,
-        "<h3>Write here...</h3>"
+        "<h3>${content}</h3>"
       );
 
       // Handle focus event to remove placeholder

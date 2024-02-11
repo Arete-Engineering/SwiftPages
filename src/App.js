@@ -10,6 +10,7 @@ import Journal from "./pages/Journal";
 import DocumentView from "./components/DocumentView";
 import Directory from "./pages/Directory";
 import Profile from "./pages/Profile";
+import Edit from "./pages/Edit";
 
 // Firebase Import
 import firebase from "firebase/compat/app";
@@ -81,6 +82,10 @@ export default function App() {
             <Route
               path="/community"
               element={user !== null ? <Directory /> : <Navigate to="/sign-in" />}
+            />
+            <Route
+            path="/edit"
+            element={user !== null ? <Edit /> : <Navigate to="/sign-in" />}
             />
             <Route
               path="/"

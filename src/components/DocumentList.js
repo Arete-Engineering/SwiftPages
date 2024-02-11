@@ -21,6 +21,10 @@ const DocumentList = ({ userID }) => {
     setDocuments(documentsData);
   };
 
+  const handleEdit = (documentId) => {
+    <QuillEditor content={"Hello"} />;
+  }
+
   const handleDelete = (documentId) => {
     const isConfirmed = window.confirm(
       "Are you sure you want to delete this page?"
@@ -56,7 +60,7 @@ const DocumentList = ({ userID }) => {
         <p>No documents found. <a href="/editor">Start writing.</a></p>
       ) : (
         <div className="documentList">
-          <h4 style={{fontSize: "18px"}}>Your Pages</h4>
+          <h4 style={{ fontSize: "18px" }}>Your Pages</h4>
           <ul className="post">
             {documents.map((document) => (
               <li key={document.id} style={{ marginBottom: "4%" }}>
@@ -82,7 +86,7 @@ const DocumentList = ({ userID }) => {
                     >
                       Delete
                     </button>
-                    <button className="btn btn-secondary btn-sm">Edit</button>
+                    <Link to={`/edit`} style={{fontSize: "0.9em"}}>Edit</Link>
                   </div>
                 </div>
                 <p>{removeHtmlTags(document.content.substring(3, 170))}</p>
