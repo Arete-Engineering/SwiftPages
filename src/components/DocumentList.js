@@ -23,7 +23,7 @@ const DocumentList = ({ userID }) => {
 
   const handleEdit = (documentId) => {
     <QuillEditor content={"Hello"} />;
-  }
+  };
 
   const handleDelete = (documentId) => {
     const isConfirmed = window.confirm(
@@ -57,7 +57,9 @@ const DocumentList = ({ userID }) => {
   return (
     <div>
       {documents.length === 0 ? (
-        <p>No documents found. <a href="/editor">Start writing.</a></p>
+        <p>
+          No documents found. <a href="/editor">Start writing.</a>
+        </p>
       ) : (
         <div className="documentList">
           <h4 style={{ fontSize: "18px" }}>Your Pages</h4>
@@ -73,23 +75,28 @@ const DocumentList = ({ userID }) => {
                 >
                   <Link to={`/pages/${document.id}`}>
                     <strong
-                      style={{ fontSize: "20px", fontWeight: "normal", color: "#0064e0", textDecoration: "underline" }}
+                      style={{
+                        fontSize: "0.8em",
+                        fontWeight: "bold",
+                        color: "black",
+                      }}
                     >
                       {document.documentTitle}
                     </strong>
                   </Link>
                   <div style={{ marginLeft: "10px" }}>
                     <button
-                      className="btn btn-secondary btn-sm"
                       onClick={() => handleDelete(document.id)}
-                      style={{ marginRight: "5px" }}
+                      className="minimalButton"
                     >
                       Delete
                     </button>
-                    <Link to={`/edit`} style={{fontSize: "0.9em"}}>Edit</Link>
+                    <Link to={`/edit`} className="minimalButton">
+                      Edit
+                    </Link>
                   </div>
                 </div>
-                <p>{removeHtmlTags(document.content.substring(3, 170))}</p>
+                {/* <p>{removeHtmlTags(document.content.substring(3, 170))}</p> */}
               </li>
             ))}
           </ul>

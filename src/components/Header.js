@@ -34,7 +34,7 @@ export default function Header() {
 
     <header className="App_header" style={{ backgroundColor: "white" }}>
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
-        <img src="https://cdn.discordapp.com/attachments/955231523488038952/1204509299892682792/Eunoia14.png?ex=65d4fdb3&is=65c288b3&hm=b8d45f0f7f1d67b0448fa37eab7047e697e4f08ddbac3c4fb94ac4d3d3f10cd9&" width="30" height="30" className="d-inline-block align-top" alt="" />
+        <img src="https://cdn.discordapp.com/attachments/781642426997014538/1216500360005550390/Eunoia14.png?ex=66009d3f&is=65ee283f&hm=8cdc27e085c9289692477d4783b6ed99898871fe2b3e7f9f551da6388d638dde&" width="30" height="30" className="d-inline-block align-top" alt="SwiftPages Logo" />
         <a className="navbar-brand" href="/home">{project_name}</a>
         <button 
           className="navbar-toggler" 
