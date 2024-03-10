@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@fontsource/manrope": "^5.0.19",
     "@lexical/react": "0.4.0",
     "asn1": "^0.2.6",
     "bootstrap": "^5.3.2",

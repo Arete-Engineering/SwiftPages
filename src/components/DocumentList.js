@@ -76,8 +76,7 @@ const DocumentList = ({ userID }) => {
                   <Link to={`/pages/${document.id}`}>
                     <strong
                       style={{
-                        fontSize: "0.8em",
-                        fontWeight: "bold",
+                        fontSize: "0.7em",
                         color: "black",
                       }}
                     >

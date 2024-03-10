@@ -11,6 +11,7 @@ import DocumentView from "./components/DocumentView";
 import Directory from "./pages/Directory";
 import Profile from "./pages/Profile";
 import Edit from "./pages/Edit";
+import "@fontsource/manrope";
 
 // Firebase Import
 import firebase from "firebase/compat/app";
